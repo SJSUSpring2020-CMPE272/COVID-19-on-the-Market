@@ -1,19 +1,19 @@
 # ProjectGroup-2
 
-## Project Idea 0
+## Project Idea 1
 
 1. Pneumonia Detection
 
-2. 1 million adults seek out medical attention from complications caused by pneumonia every year, and 50,000 due from the disease. In order to treat this, doctors must first determine if pneumonia is present. In order to do that, doctors examine chest x-ray scans to find certain infections in the lungs. This requires ample time for the doctors to check out, and if the doctor is overburdened with dozens of x-rays to examine, it could take a long time for patients to get their results, and seek treatment right away. This project utilizes the help of IBM watson to create a machine learning model that will learn from images of chest scans that have pneumonia present or not present. From this, doctors can use to assit in diagnosing to speed up the process and efficiency.
+2. 1 million adults seek out medical attention from complications caused by pneumonia every year, and 50,000 die from the disease. In order to treat this, doctors must first determine if pneumonia is present. In order to do that, doctors examine chest x-ray scans to find certain infections in the lungs. This requires ample time for the doctors to check out, and if the doctor is overburdened with dozens of x-rays to examine, it could take a long time for patients to get their results, and seek treatment right away. This project utilizes the help of IBM Watson to create a machine learning model that will learn from images of chest scans that have pneumonia present or not present. From this, doctors can use to assist in diagnosing to speed up the process and efficiency.
 
 3. This is in no way to replace doctors, but to add extra evidence and confidence that their conclusion is correct. With pneumonia being so common throughout all ages, it is important, especially during the season, to confirm every patient who has this sickness. 
 
-4. The project will utilize IBM Watson Image REcognition API to be accompanied with Backend/Front technologies like HTML, CSS, NodeJS, etc.
+4. The project will utilize IBM Watson Image Recognition API to be accompanied with Backend/Front technologies like HTML, CSS, NodeJS, etc.
 
 Dataset: https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia
 
 
-## Project Idea 1
+## Project Idea 2
 
 1. Heart Disease Detection
 
@@ -43,14 +43,14 @@ Of getting patients treated. Also, a patient can also use this application if th
    
    
 
-## Project Idea 2 
+## Project Idea 3
 1. Prediction of Wild Fire causes
 
-2. 4/5 wild fires are caused by humans. (https://nhmu.utah.edu/sites/default/files/attachments/Wildfire%20FAQs.pdf) Wild fires are devasting to the environment, as many animals and houses are lost. Prevention of the causes of these 
+2. About 80% of every wildfires are caused by humans. (https://nhmu.utah.edu/sites/default/files/attachments/Wildfire%20FAQs.pdf) Wildfires are devasting to the environment, as many animals and houses are lost. Prevention of the causes of these 
 widespread fires are of the upmost priority in preserved wildlife and protecting towns. If investigators could predict what 
-was the causes of these fires, it could assist in leading them to the culprit responsible. Using Machine Learning on an existing dataset, we can use Tensorflow/Keras to create a model for predicting root causes of wild fires. MySQL databases can store this data , and receive more when fires occur. We can also have a user interface, as well as deployment on a cloud. 
+was the causes of these fires, it could assist in leading them to the possible culprit. Using Machine Learning on an existing dataset, we can use Tensorflow/Keras to create a model for predicting root causes of wild fires. MySQL databases can store this data , and receive more when fires occur. We can also have a user interface, as well as deployment on a cloud. 
 
-3. The goal of this project is to ultimately prevent these fires from happening in the first place. Given fires occuring in California, Australia, and in the Amazon, the damages are immeasurable. We hope that past data on fire causes would provide some insight on what could have started, and potentially lead to finding culprits responsible.
+3. The goal of this project is to ultimately prevent these fires from happening in the first place. Given fires occurring in California, Australia, and in the Amazon, the damages are immeasurable. We hope that past data on fire causes would provide some insight on what could have started, and potentially lead to finding culprits responsible.
 
 4. Machine Learning
    -tensorflow
@@ -68,13 +68,13 @@ was the causes of these fires, it could assist in leading them to the culprit re
 
 
 
-## Project Idea 3
+## Project Idea 4
 
 1. Recipe Suggester
 
-2. Many people have a lot of food just in their pantries or refridgerators and do not know what to do with all the food that they have stored away. People will be able to add the ingredients (either by manually inputting or uploading photos of them) that they own and will be shown suggested recipes based on those ingredients. Users can also refine the results by adding additional constraints such as recipe ratings, time, cost, nutrition, and dietary restrictions.
+2. Many people have a lot of food just in their pantries or refrigerators and do not know what to do with all the food that they have stored away. People will be able to add the ingredients (either by manually inputting or uploading photos of them) that they own and will be shown suggested recipes based on those ingredients. Users can also refine the results by adding additional constraints such as recipe ratings, time, cost, nutrition, and dietary restrictions.
 
-3. This is to help people figure out what to cook, based on what ingredients they already have. This project can help them empty out their pantries or refridgerators by suggesting recipes that use ingredients that they have, and will also help people become more environmentally friendly by reducing food waste.
+3. This is to help people figure out what to cook, based on what ingredients they already have. This project can help them empty out their pantries or refrigerators by suggesting recipes that use ingredients that they have, and will also help people become more environmentally friendly by reducing food waste.
 
 4. Machine Learning
    -IBM Watson Visual Recognition
@@ -88,11 +88,11 @@ was the causes of these fires, it could assist in leading them to the culprit re
 
    Nodejs, HTML, CSS, REST API's
    
-## Project Idea 4
+## Project Idea 5
    
 1. Student's Assistant
    
-2. Some students are not auditory learners. Students go to lecture, get distracted, and only hear a small percentage of what the professor says. This means that not only is the students' time wasted, the professor's time is also wasted since not all of his words are being absorbed. The professor's use of his time would be maximized if all students absorbed 100% of his words. One way to achieve this is to use voice-to-text to write down all of the professor's words. We can take this one step further and create an application that
+2. Some students are not auditory learners. Students go to lecture, get distracted, and only hear a small percentage of what the professor says. This means that not only is the students' time wasted, the professor's time is also wasted since not all of his/her words are being absorbed. The professor's use of his time would be maximized if all students absorbed 100% of his words. One way to achieve this is to use voice-to-text to write down all of the professor's words. We can take this one step further and create an application that. This also helps students with hearing disabilities.
    
    A) creates a full text rendition of the lecture. This would involve 
 	   i) sorting the word-for-word content according to which slide they were on (i.e. Slide1 content, Slide2 content, etc.)
