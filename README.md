@@ -1,5 +1,7 @@
 # ProjectGroup-2
 
+# Suggested - Candidate for seizure predictions?
+
 ## Project Idea 1
 
 1. Pneumonia Detection
