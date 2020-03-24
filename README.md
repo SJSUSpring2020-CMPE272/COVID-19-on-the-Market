@@ -7,6 +7,8 @@ By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 
 4. This project will utilize technologies such as Tensorflow/Keras, Databases, Spark. 
 
-Dataset: https://finance.yahoo.com/quote/%5EDJI?p=^DJI    
+Dataset: https://finance.yahoo.com/quote/%5EDJI?p=^DJI   
+
+https://www.kaggle.com/c/covid19-global-forecasting-week-1/data
 
 
