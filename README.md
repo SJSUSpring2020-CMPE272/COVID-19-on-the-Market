@@ -5,7 +5,7 @@ By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 
 3. The best way to combat a virus and its adverse affects on us, is to understand and predict what it coming. Understanding the trends that come with a dangerous pandemic is the best way to defend ourselves against it, whether its protecting ourselves from the virus, or to protect ourselves financially. Being able to anticipate the harmful affects will help many people 
 
-4. This project will utilize technologies such as Tensorflow/Keras, Databases, Spark. 
+4. This project will utilize technologies such as IBM Bluemix AI,  Databases, Spark, Some front-end framework.
 
 Dataset: https://finance.yahoo.com/quote/%5EDJI?p=^DJI   
 
