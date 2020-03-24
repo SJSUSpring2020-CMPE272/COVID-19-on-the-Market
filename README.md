@@ -1,4 +1,4 @@
-# ProjectGroup-2
+# COVID-19 Effect on the Market
 
 # Suggested - Candidate for seizure predictions?
 
