@@ -9,6 +9,8 @@ By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 
 Dataset: 
 
+https://datahub.io/core/covid-19
+
 https://oui.doleta.gov/unemploy/claims.asp
 
 https://finance.yahoo.com/quote/%5EDJI?p=^DJI   
