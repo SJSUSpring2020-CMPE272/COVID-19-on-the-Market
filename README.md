@@ -7,7 +7,11 @@ By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 
 4. This project will utilize technologies such as IBM Bluemix AI,  Databases, Spark, Some front-end framework.
 
-Dataset: https://finance.yahoo.com/quote/%5EDJI?p=^DJI   
+Dataset: 
+
+https://oui.doleta.gov/unemploy/claims.asp
+
+https://finance.yahoo.com/quote/%5EDJI?p=^DJI   
 
 https://www.kaggle.com/c/covid19-global-forecasting-week-1/data
 
