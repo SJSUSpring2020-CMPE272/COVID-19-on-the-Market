@@ -1,9 +1,11 @@
 # COVID-19 on the Market
 
 # Updates
-## March 30th, 2020
+## March 29th, 2020
 
 - Found more datasets that would assist in finding economic impact of COVID-19 (Gas and unemployment)
+
+## March 30th, 2020
 
 
 By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
