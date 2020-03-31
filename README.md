@@ -31,3 +31,6 @@ https://datahub.io/core/covid-19
  The dataset is comprises of multiple datasets. The reason being is that there is no pregenerated dataset relating the corona virus statistics with the various economic statistics. Thus, in this project, we will have to make our own by stitching together these datasets. We are planning to get our data based on weeks starting in 2020, and do joins on the data to merge them together. 
 
 
+# Architecture
+
+![Architecture](CMPE272_Architecture.png)
