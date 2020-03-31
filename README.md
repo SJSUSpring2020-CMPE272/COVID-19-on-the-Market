@@ -2,8 +2,9 @@
 
 # Updates
 ## March 30th, 2020
--Found more datasets that would assist in finding economic impact of COVID-19 (Gas and unemployment)
--
+
+- Found more datasets that would assist in finding economic impact of COVID-19 (Gas and unemployment)
+
 
 By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 
