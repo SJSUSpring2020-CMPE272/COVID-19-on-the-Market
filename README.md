@@ -1,21 +1,20 @@
 # COVID-19 on the Market
-
+By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 # Updates
 ## March 29th, 2020
 
 - Found more datasets that would assist in finding economic impact of COVID-19 (Gas and unemployment)
 
 ## March 31th, 2020
-- Got an example IBM Watson Model working. Able to use python to call the IBM server to send features, and receive a prediction off of a model created for estimating housing prices. 
 
+- Got an example IBM Watson Model working. Able to use python to call the IBM server to send features, and receive a prediction off of a model created for estimating housing prices. Will use this for front-end developers to start working on a UI while Machine Learning Model is being developed. 
 
-By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
-
-2. COVID-19 is an ongoing pandemic currently affecting the entire world. Not only has this virus taken a toll on the population, but it has massive effects on the economy. In order to contain the virus, people are being forced/obligated to stop working, thus having a chain effect on other businesses. You can imagine the economy suffering in terms of the stock market and employment. Instead of letting this virus take its tool, it is best for us to prepare ourselves from what is impending. 
+## Abstract
+1. COVID-19 is an ongoing pandemic currently affecting the entire world. Not only has this virus taken a toll on the population, but it has massive effects on the economy. In order to contain the virus, people are being forced/obligated to stop working, thus having a chain effect on other businesses. You can imagine the economy suffering in terms of the stock market and employment. Instead of letting this virus take its tool, it is best for us to prepare ourselves from what is impending. 
 
 3. The best way to combat a virus and its adverse affects on us, is to understand and predict what it coming. Understanding the trends that come with a dangerous pandemic is the best way to defend ourselves against it, whether its protecting ourselves from the virus, or to protect ourselves financially. Being able to anticipate the harmful affects will help many people 
 
-4. This project will utilize technologies such as IBM Watson Machine Learning, SQL. Other Front end frame works. 
+4. This project will utilize technologies such as IBM Watson Machine Studio, Python Libraries Like Pandas for dataset merging. Other Front end frame works. 
 
 Dataset: 
 
