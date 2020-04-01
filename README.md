@@ -1,11 +1,11 @@
 # COVID-19 on the Market
 By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 # Updates
-## March 29th, 2020
+### March 29th, 2020
 
 - Found more datasets that would assist in finding economic impact of COVID-19 (Gas and unemployment)
 
-## March 31th, 2020
+### March 31th, 2020
 
 - Got an example IBM Watson Model working. Able to use python to call the IBM server to send features, and receive a prediction off of a model created for estimating housing prices. Will use this for front-end developers to start working on a UI while Machine Learning Model is being developed. 
 
