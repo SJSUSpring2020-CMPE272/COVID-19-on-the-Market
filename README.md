@@ -5,7 +5,8 @@
 
 - Found more datasets that would assist in finding economic impact of COVID-19 (Gas and unemployment)
 
-## March 30th, 2020
+## March 31th, 2020
+- Got an example IBM Watson Model working. Able to use python to call the IBM server to send features, and receive a prediction off of a model created for estimating housing prices. 
 
 
 By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
