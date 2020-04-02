@@ -33,4 +33,4 @@ https://datahub.io/core/covid-19
 
 # Architecture
 
-![Architecture](CMPE272_Architecture.png)
+![Architecture](CMPE272_Architecture_2.png)
