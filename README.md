@@ -19,6 +19,9 @@ By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 - More data gathered over the past two days was filtered and fed into the digester. The code was adjusted accordingly to perform the task. The new dataset is to be fed to the Machine Learning model. 
 - Ran the created dataset through IBM Watson. Got a model that predicts the S&P500 after inputing features like DGS10, T10YIE, Confirmed Covid cases, Recovered Covid cases, Deaths due to COVID, unemployment claims, average gas prices, average diesal prices.
 
+### April 5th, 2020
+- Put together boilerplate for website using Django. Website is able to make a request for a new access token and use it to request a prediction from machine learning server. The next step is to incorporate user input. 
+
 ## Abstract
 1. COVID-19 is an ongoing pandemic currently affecting the entire world. Not only has this virus taken a toll on the population, but it has massive effects on the economy. In order to contain the virus, people are being forced/obligated to stop working, thus having a chain effect on other businesses. You can imagine the economy suffering in terms of the stock market and employment. Instead of letting this virus take its tool, it is best for us to prepare ourselves from what is impending. 
 

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>C19 Test Page</title>
+    </head>
+    <body>
+<h1>C19 Test Page</h1>
+        {% if predictions %}
+            {% for prediction in predictions %} <!-- just one in this case -->
+                <!--<p>There is a prediction.</p>-->
+                {% if prediction.fields %}
+                    <!--<p>There is a field:</p>-->
+                    {% for field in prediction.fields %}
+                        <div style='display:inline'>{{ field }}:</div>
+                    {% endfor %}
+                {% else %}
+                    <p>There is no field</p>
+                {% endif %}
+                {% if prediction.values %}
+                    <!--<p>There is a value:</p>-->
+                    {% for value in prediction.values %}
+                        <div style='display:inline'>{{ value }}</div>
+                    {% endfor %}
+                {% else %}
+                    <p>There is no value</p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No predictions are available.</p>
+        {% endif %}
+    </body>
+</html>
