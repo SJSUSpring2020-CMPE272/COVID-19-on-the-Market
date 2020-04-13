@@ -5,6 +5,46 @@
         <title>C19 Test Page</title>
     </head>
     <body>
+<div style="border-style: solid; border-width: 5px;">
+    <form action="/c19/receive" method="post">
+        {% csrf_token %}
+        <!--{{ f.as_p }}-->
+        {{ form.non_field_errors }}
+        <div class="fields">
+            {{ form.transaction_date.errors }}
+            <label for="{{ form.transaction_date.id_for_label }}">Transaction Date: </label>
+            {{ form.transaction_date }}
+        </div>
+        <div class="fields">
+            {{ form.houde_age.errors }}
+            <label for="{{ form.house_age.id_for_label }}">House Age:</label>
+            {{ form.house_age }}
+        </div>
+        <div class="fields">
+            {{ form.distance_to_station.errors }}
+            <label for="{{ form.distance_to_station.id_for_label }}">Distance to Nearest MRT Station:</label>
+            {{ form.distance_to_station }}
+        </div>
+        <div class="fields">
+            {{ form.number_of_stores.errors }}
+            <label for="{{ form.number_of_stores.id_for_label }}">Number of Convenience Stores</label>
+            {{ form.number_of_stores }}
+        </div>
+        <div class="fields">
+            {{ form.latitude.errors }}
+            <label for="{{ form.latitude.id_for_label }}">Latitude:</label>
+            {{ form.latitude }}
+        </div>
+        <div class="fields">
+            {{ form.longitude.errors }}
+            <label for="{{ form.longitude.id_for_label }}">Longitude</label>
+            {{ form.longitude }}
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div style="border-style: solid; border-width: 5px;">
 <h1>C19 Test Page</h1>
         {% if predictions %}
             {% for prediction in predictions %} <!-- just one in this case -->
@@ -29,5 +69,6 @@
         {% else %}
             <p>No predictions are available.</p>
         {% endif %}
+</div>
     </body>
 </html>
