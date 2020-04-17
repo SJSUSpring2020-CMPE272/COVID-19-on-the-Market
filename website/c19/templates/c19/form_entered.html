@@ -2,17 +2,82 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <style>
+                body {background-color: white;}
+                h1   {color: black;}
+                p    {color: red;}
+                .label {
+                    display: inline-block; 
+                    width: 300px; 
+                    /*border-style: solid;
+                    border-width: 1px;*/
+                    color: black; 
+                    font-size: 20px;
+                }
+                .value {
+                    display: inline-block; 
+                    width: 100px; 
+                    /*border-style: solid;
+                    border-width: 1px;*/
+                    color: black; 
+                }
+                #main {
+                    /*border-style: solid; 
+                    border-width: 5px;*/ 
+                    display: block;
+                    margin-left: auto; 
+                    margin-right: auto;
+                    width: 40%;
+                }
+                #title{
+                    text-align: center;
+                }
+                </style>
+        
         <title>Form Entered</title>
     </head>
     <body>
-        <h1>Thank you for entering information.</h1>
-        <h3>Here is what you entered:</h3>
-        <p>Transaction date: {{ transaction_date }}</p>
-        <p>House Age: {{ house_age }}</p>
-        <p>Distance to Nearest MRT Station: {{ distance_to_station }}</p>
-        <p>Number of Convenience Stores: {{ number_of_stores }}</p>
-        <p>Latitude: {{ latitude }}</p>
-        <p>Longitude: {{ longitude }}</p>
+        <h1 id='title'>Thank you for entering information:</h1><br>
+        <div id='main'>
+            <!--<h3 >Here is what you entered:</h3>-->
+            <p class='label'>key: </p><p class='value'>{{ key }}</p><br>
+            <p class='label'>dgs: </p><p class='value'>{{ dgs }}</p><br>
+            <p class='label'>t10: </p><p class='value'>{{ t10 }}</p><br>
+            <p class='label'>confirmed_cases: </p><p class='value'>{{ confirmed_cases }}</p><br>
+            <p class='label'>recovered_cases:</p> <p class='value'>{{ recovered_cases }}</p><br>
+            <p class='label'>deaths:</p> <p class='value'>{{ deaths }}</p><br>
+            <p class='label'>umemployment: </p><p class='value'>{{ unemployment }}</p><br>
+            <p class='label'>gas_prices: </p><p class='value'>{{ gas_prices }}</p><br>
+            <p class='label'>diesel_prices: </p><p class='value'>{{ diesel_prices }}</p><br>
+
+            <h1>Below is the prediction based on what you entered: </h1>
+            {% if predictions %}
+                {% for prediction in predictions %} <!-- just one in this case -->
+                    <!--<p>There is a prediction.</p>-->
+                    {% if prediction.fields %}
+                        <!--<p>There is a field:</p>-->
+                        {% for field in prediction.fields %}
+                            <div style='display:inline'>{{ field }}:</div>
+                        {% endfor %}
+                    {% else %}
+                        <p>There is no field</p>
+                    {% endif %}
+                    {% if prediction.values %}
+                        <!--<p>There is a value:</p>-->
+                        {% for value in prediction.values %}
+                            <div style='display:inline'>{{ value }}</div>
+                        {% endfor %}
+                    {% else %}
+                        <p>There is no value</p>
+                    {% endif %}
+                {% endfor %}
+            {% else %}
+                <p>No predictions are available.</p>
+            {% endif %}
+        </div>
+
         <!--{% for key in context %}
             <h6>{{key}}:{{key.value}}</h6>
         {% endfor %}-->

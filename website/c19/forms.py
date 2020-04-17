@@ -1,10 +1,13 @@
 from django import forms 
 import datetime
 class FieldsForm(forms.Form):
-        #number = forms.CharField(label='Number')
-        transaction_date = forms.DateField(label='Date',initial=datetime.date.today)
-        house_age = forms.IntegerField(label='House Age')
-        distance_to_station = forms.IntegerField(label='Distance to Nearest MRT Station')
-        number_of_stores = forms.IntegerField(label='Number of Convenience Stores')
-        latitude = forms.DecimalField(label='latitude')
-        longitude = forms.DecimalField(label='longitude') 
+        key = forms.DateField(label='Date', initial=datetime.date.today)
+        dgs = forms.DecimalField(label='dgs') 
+        t10 = forms.DecimalField(label='t10') 
+        confirmed_cases = forms.IntegerField(label='confirmed_cases')
+        recovered_cases = forms.IntegerField(label='recovered_cases')
+        deaths = forms.IntegerField(label='deaths')
+        unemployment = forms.IntegerField(label='unemployment')
+        gas_prices = forms.DecimalField(label='gas_prices')
+        diesel_prices = forms.DecimalField(label='diesel_prices')
+        

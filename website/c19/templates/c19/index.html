@@ -2,73 +2,92 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <style>
+                body {background-color: white;}
+                h1   {color: black;}
+                p    {color: red;}
+                .label {
+                    display: inline-block; 
+                    width: 200px; 
+                    font-size: 15px;
+                    border-style: solid;
+                    border-width: 1px;
+                    color: black; 
+                }
+                #main {
+                    /*border-style: solid; 
+                    border-width: 5px;*/ 
+                    display: block;
+                    margin-left: auto; 
+                    margin-right: auto;
+                    width: 30%;
+                }
+                #title{
+                    text-align: center;
+                }
+                </style>
         <title>C19 Test Page</title>
     </head>
     <body>
-<div style="border-style: solid; border-width: 5px;">
+
+        <div id='title'>
+            <h1>Covid-19-on-the-Market</h1>
+        </div>
+<div id='main'>
+    <h1>Enter fields:</h1>
     <form action="/c19/receive" method="post">
         {% csrf_token %}
         <!--{{ f.as_p }}-->
         {{ form.non_field_errors }}
         <div class="fields">
-            {{ form.transaction_date.errors }}
-            <label for="{{ form.transaction_date.id_for_label }}">Transaction Date: </label>
-            {{ form.transaction_date }}
+            {{ form.key.errors }}
+            <label class="label" for="{{ form.key.id_for_label }}">Key: </label>
+            {{ form.key }}
         </div>
         <div class="fields">
-            {{ form.houde_age.errors }}
-            <label for="{{ form.house_age.id_for_label }}">House Age:</label>
-            {{ form.house_age }}
+            {{ form.dgs.errors }}
+            <label class="label" for="{{ form.dgs.id_for_label }}">DGS:</label>
+            {{ form.dgs}}
         </div>
         <div class="fields">
-            {{ form.distance_to_station.errors }}
-            <label for="{{ form.distance_to_station.id_for_label }}">Distance to Nearest MRT Station:</label>
-            {{ form.distance_to_station }}
+            {{ form.t10.errors }}
+            <label class="label" for="{{ form.t10.id_for_label }}">T10:</label>
+            {{ form.t10 }}
         </div>
         <div class="fields">
-            {{ form.number_of_stores.errors }}
-            <label for="{{ form.number_of_stores.id_for_label }}">Number of Convenience Stores</label>
-            {{ form.number_of_stores }}
+            {{ form.confirmed_cases.errors }}
+            <label class="label" for="{{ form.confirmed_cases.id_for_label }}">Confirmed Cases:</label>
+            {{ form.confirmed_cases }}
         </div>
         <div class="fields">
-            {{ form.latitude.errors }}
-            <label for="{{ form.latitude.id_for_label }}">Latitude:</label>
-            {{ form.latitude }}
+            {{ form.recovered_cases.errors }}
+            <label class="label" for="{{ form.recovered_cases.id_for_label }}">Recovered Cases:</label>
+            {{ form.recovered_cases }}
         </div>
         <div class="fields">
-            {{ form.longitude.errors }}
-            <label for="{{ form.longitude.id_for_label }}">Longitude</label>
-            {{ form.longitude }}
+            {{ form.deaths.errors }}
+            <label class="label" for="{{ form.deaths.id_for_label }}">Deaths:</label>
+            {{ form.deaths }}
+        </div>
+        <div class="fields">
+                {{ form.unemployment.errors }}
+                <label class="label" for="{{ form.unemployment.id_for_label }}">Unemployment: </label>
+                {{ form.unemployment }}
+        </div>
+        <div class="fields">
+                {{ form.gas_prices.errors }}
+                <label class="label" for="{{ form.gas_prices.id_for_label }}">Gas Prices:</label>
+                {{ form.gas_prices }}
+        </div>
+        <div class="fields">
+                {{ form.diesel_prices.errors }}
+                <label class="label" for="{{ form.diesel_prices.id_for_label }}">Deaths</label>
+                {{ form.diesel_prices }}
         </div>
         <input type="submit" value="Submit">
     </form>
-</div>
-
-<div style="border-style: solid; border-width: 5px;">
-<h1>C19 Test Page</h1>
-        {% if predictions %}
-            {% for prediction in predictions %} <!-- just one in this case -->
-                <!--<p>There is a prediction.</p>-->
-                {% if prediction.fields %}
-                    <!--<p>There is a field:</p>-->
-                    {% for field in prediction.fields %}
-                        <div style='display:inline'>{{ field }}:</div>
-                    {% endfor %}
-                {% else %}
-                    <p>There is no field</p>
-                {% endif %}
-                {% if prediction.values %}
-                    <!--<p>There is a value:</p>-->
-                    {% for value in prediction.values %}
-                        <div style='display:inline'>{{ value }}</div>
-                    {% endfor %}
-                {% else %}
-                    <p>There is no value</p>
-                {% endif %}
-            {% endfor %}
-        {% else %}
-            <p>No predictions are available.</p>
-        {% endif %}
 </div>
     </body>
 </html>
