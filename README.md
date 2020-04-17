@@ -22,6 +22,12 @@ By Raymond Hong, Yathukulan Thayabaran, Zoe Lie, Michaela Molina
 #### April 5th, 2020
 - Put together boilerplate for website using Django. Website is able to make a request for a new access token and use it to request a prediction from machine learning server. The next step is to incorporate user input. 
 
+#### April 12th, 2020
+- Website has a form and is able to handle user input. The next step is to use it as input to the request to the machine learning server. 
+
+#### April 13th, 2020
+- Created a python script to utilize  Watson API to automate Token generation and to submit features for predictions. Graph can be generated to show results of predictions.
+
 ## Abstract
 1. COVID-19 is an ongoing pandemic currently affecting the entire world. Not only has this virus taken a toll on the population, but it has massive effects on the economy. In order to contain the virus, people are being forced/obligated to stop working, thus having a chain effect on other businesses. You can imagine the economy suffering in terms of the stock market and employment. Instead of letting this virus take its tool, it is best for us to prepare ourselves from what is impending. 
 
