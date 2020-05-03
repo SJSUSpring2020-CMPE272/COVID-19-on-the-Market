@@ -31,7 +31,7 @@ We combined multiple datasets into one large dataset to use to train our model. 
 #### Website
 - Django
 - HTML/CSS
-- AWS
+- AWS EC2
 
 # Updates
 #### March 29th, 2020
