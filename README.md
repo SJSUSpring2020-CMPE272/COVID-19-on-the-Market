@@ -23,6 +23,15 @@ We combined multiple datasets into one large dataset to use to train our model. 
 
 ![Architecture](CMPE272_Architecture_3.png)
 
+# Technology Stack
+#### Model
+- IBM Watson
+- Pandas
+- Python
+#### Website
+- Django
+- HTML/CSS
+- AWS
 
 # Updates
 #### March 29th, 2020
