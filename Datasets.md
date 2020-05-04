@@ -14,7 +14,7 @@ DJI_index_daily_^DJI	-								https://finance.yahoo.com/quote/%5EDJI/history?p=%
 
 Nasdaq_index_daily_^IXIC	-							https://finance.yahoo.com/quote/%5EIXIC/history?p=%5EIXIC										5/3/2020
 
-Wilshire_5000_total_market_index_^W5000		-					https://finance.yahoo.com/quote/%5EW5000/history?period1=1514764800&period2=1585872000&interval=1d&filter=history&frequency=1d		5/3/2020
+Wilshire_5000_total_market_index_^W5000		-					https://finance.yahoo.com/quote/%5EW5000/history?p=%5EW5000										5/3/2020
 
 10-year-treasury_constant_maturity_rate_DGS10	-					https://fred.stlouisfed.org/series/DGS10												5/3/2020
 
