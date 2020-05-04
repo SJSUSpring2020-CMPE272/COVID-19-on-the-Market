@@ -1,0 +1,183 @@
+html {
+    height: 100%;
+    margin: 0;
+    /*border: 2px solid red;*/
+    background: url(../images/blue2.jpg) no-repeat center center fixed;
+    opacity: 1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    background-color: rgba(0,0,0,.25);
+    /*border: 2px solid orange;*/
+    height: 100%;
+}
+
+#text {
+    /*border: 2px solid yellow;*/
+    height: 100%;
+}
+
+#title_box {
+    /*border: 2px solid green;*/
+    -webkit-box-shadow: 0px 20px 37px -6px rgba(255,255,255,1);
+    -moz-box-shadow: 0px 20px 37px -6px rgba(255,255,255,1);
+    box-shadow: 0px 20px 37px -6px rgba(255,255,255,1);
+}
+
+#title {
+    /*border: 2px solid gray;*/
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: rgba(255, 255, 150, 1);
+
+    -webkit-text-fill-color: white; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    font-size: 60px;
+    margin: 0;
+    padding: 15px;
+    padding-top: 25px;
+}
+
+#main {
+    /*border: 2px solid blue;*/
+    height: 100%;
+}
+
+#img_box {
+    /*border: 2px solid purple;*/
+    text-align: center;
+    
+}
+
+#form_box {
+    /*border: 2px solid palevioletred;*/
+    display: block;
+    height: auto;
+}
+
+#enter_fields {
+    text-align: center;
+    color: white;
+    font-family: "Lucida Console", Courier, monospace;
+    font-size: 15px;
+}
+
+#submit {
+    background-color: transparent;
+    text-align: right;
+    margin-right: 30px;
+    color: white;
+}
+
+input[type=submit] {
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    outline: none;
+}
+
+form {
+    display: block;
+    /*border: 2px solid greenyellow;*/
+}
+
+.row {
+    /*border: 2px solid black;*/
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.fields {
+    display: inline;
+}
+
+.label {
+    /*border: 2px solid red;*/
+    display: inline;
+}
+
+/*input {
+    border-radius: 5px;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid rgb(151, 151, 151);
+    color: white;
+    width: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+}*/
+
+
+
+/* slider stuff */
+
+.fields0 {
+    width: 90px; /* Width of the outside container */
+    display: inline-block;
+    /*border: 1px solid yellow;*/
+    height: 30px;
+    text-align: center;
+    font-family: "Lucida Console", Courier, monospace;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
+.value {
+    
+    /*border: 1px solid red;*/
+    margin-bottom: 3px;
+    display: inline-block;
+}
+
+  /* The slider itself */
+  input[type=range] {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 5px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: .9; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border: none;
+    border: 1px solid purple;
+    display: block;
+  }
+  
+  /* Mouse-over effects */
+  input[type=range]:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+    cursor: pointer;
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: white; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;  
+    
+  }
+  
+  /* handle*/
+  .slider::-moz-range-thumb {
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: white; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;  
+  }
+
+  .value {
+    color: white;
+  }

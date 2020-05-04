@@ -5,73 +5,160 @@
         <meta charset="utf-8">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/c19a.css' %}">
+        <link rel="stylesheet" href="{% static 'css/c19c.css' %}">
         <title>C19 Test Page</title>
+        <script>
+            window.onload = function exampleFunction() { 
+                /*
+                $(".fields0").each(function () {
+                    // $this is a reference to .slider in current iteration of each
+                    var $this = $(this);
+                    // find any .slider-range element WITHIN scope of $this
+                    $(".slider-range", $this).slider({
+                        range: true,
+                        min: 0,
+                        max: 100,
+                        values: [30, 60],
+                        slide: function (event, ui) {
+                            // find any element with class .amount WITHIN scope of $this
+                            $(".value", $this).val("$this.value")
+                            $(".value", $this).val("$" + ui.values[0] + " - $" + ui.values[1]);
+                        }
+                    });
+                    //$(".amount").val("$" + $(".slider-range").slider("values", 0) + " - $" + $(".slider-range").slider("values", 1));
+                });    
+                */
+
+
+            
+                var d1_slider = document.getElementById("d1_range");
+                var d1_output = document.getElementById("d1_out");
+                d1_output.innerHTML = d1_slider.value; // Display the default slider value
+                d1_slider.oninput = function() { d1_output.innerHTML = this.value; }
+                
+                var t1_slider = document.getElementById("t1_range");
+                var t1_output = document.getElementById("t1_out");
+                t1_output.innerHTML = t1_slider.value; // Display the default slider value
+                t1_slider.oninput = function() { t1_output.innerHTML = this.value; }
+                
+                var conf1_slider = document.getElementById("conf1_range");
+                var conf1_output = document.getElementById("conf1_out");
+                conf1_output.innerHTML = conf1_slider.value; // Display the default slider value
+                conf1_slider.oninput = function() { conf1_output.innerHTML = this.value; }
+                
+                var rec1_slider = document.getElementById("rec1_range");
+                var rec1_output = document.getElementById("rec1_out");
+                rec1_output.innerHTML = rec1_slider.value; // Display the default slider value
+                rec1_slider.oninput = function() { rec1_output.innerHTML = this.value; }
+                
+                var dth1_slider = document.getElementById("dth1_range");
+                var dth1_output = document.getElementById("dth1_out");
+                dth1_output.innerHTML = dth1_slider.value; // Display the default slider value
+                dth1_slider.oninput = function() { dth1_output.innerHTML = this.value; }
+                
+                var un1_slider = document.getElementById("un1_range");
+                var un1_output = document.getElementById("un1_out");
+                un1_output.innerHTML = un1_slider.value; // Display the default slider value
+                un1_slider.oninput = function() { un1_output.innerHTML = this.value; }
+                
+                var gas1_slider = document.getElementById("gas1_range");
+                var gas1_output = document.getElementById("gas1_out");
+                gas1_output.innerHTML = gas1_slider.value; // Display the default slider value
+                gas1_slider.oninput = function() { gas1_output.innerHTML = this.value; }
+                
+                var dies1_slider = document.getElementById("dies1_range");
+                var dies1_output = document.getElementById("dies1_out");
+                dies1_output.innerHTML = dies1_slider.value; // Display the default slider value
+                dies1_slider.oninput = function() { dies1_output.innerHTML = this.value; }
+
+            }
+        </script>
     </head>
     <body>
-        <div id="outer">   
-            <div id="text">
-                <div >
-                    <!--<h1 id='title'>&lt/covid-19-on-the-market&gt</h1>-->
-                    <h1 id='title'>Covid-19-on-the-Market</h1>
-                </div>
-
-                <img src="{% static 'images/test_graph.png' %}" alt="image did not work" height="400" width="400">
-                <div id='main'>
-                    <h1>Enter fields:</h1>
-                    <form action="/c19/receive" method="post">
-                        {% csrf_token %}
-                        <!--{{ f.as_p }}-->
-                        {{ form.non_field_errors }}
-                        <div class="fields">
-                            {{ form.key.errors }}
-                            <label class="label" for="{{ form.key.id_for_label }}">Key: </label>
-                            {{ form.key }}
-                        </div>
-                        <div class="fields">
-                            {{ form.dgs.errors }}
-                            <label class="label" for="{{ form.dgs.id_for_label }}">DGS:</label>
-                            {{ form.dgs}}
-                        </div>
-                        <div class="fields">
-                            {{ form.t10.errors }}
-                            <label class="label" for="{{ form.t10.id_for_label }}">T10:</label>
-                            {{ form.t10 }}
-                        </div>
-                        <div class="fields">
-                            {{ form.confirmed_cases.errors }}
-                            <label class="label" for="{{ form.confirmed_cases.id_for_label }}">Confirmed Cases:</label>
-                            {{ form.confirmed_cases }}
-                        </div>
-                        <div class="fields">
-                            {{ form.recovered_cases.errors }}
-                            <label class="label" for="{{ form.recovered_cases.id_for_label }}">Recovered Cases:</label>
-                            {{ form.recovered_cases }}
-                        </div>
-                        <div class="fields">
-                            {{ form.deaths.errors }}
-                            <label class="label" for="{{ form.deaths.id_for_label }}">Deaths:</label>
-                            {{ form.deaths }}
-                        </div>
-                        <div class="fields">
-                                {{ form.unemployment.errors }}
-                                <label class="label" for="{{ form.unemployment.id_for_label }}">Unemployment: </label>
-                                {{ form.unemployment }}
-                        </div>
-                        <div class="fields">
-                                {{ form.gas_prices.errors }}
-                                <label class="label" for="{{ form.gas_prices.id_for_label }}">Gas Prices:</label>
-                                {{ form.gas_prices }}
-                        </div>
-                        <div class="fields">
-                                {{ form.diesel_prices.errors }}
-                                <label class="label" for="{{ form.diesel_prices.id_for_label }}">Deaths</label>
-                                {{ form.diesel_prices }}
-                        </div>
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
+        <div id="text">
+            <div id="title_box" >
+                <!--<h1 id='title'>&lt/covid-19-on-the-market&gt</h1>-->
+                <h1 id='title'>Covid-19-on-the-Market</h1>
             </div>
-        </div>
+            <div id='main'>
+                <div id="img_box">
+                    <img src="{% static 'images/test_graph.png' %}" alt="image did not work" height="400" width="500">
+                </div>
+                <div id="form_box">
+                    <h1 id='enter_fields'>Enter fields:</h1>
+                    <form action="/c19/receive" method="post" >
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div id="row1" class="row">
+                            <div class="fields0" ><span class="value"id="d1_out"></span><label class="label" for="{{ form.d1.id_for_label }}"></label>{{ form.d1}}</div>
+                            <div class="fields0"><span class="value"id="t1_out"></span><label class="label" for="{{ form.t1.id_for_label }}"></label>{{ form.t1 }}</div>
+                            <div class="fields0"><span class="value"id="conf1_out"></span><label class="label" for="{{ form.conf1.id_for_label }}"></label>{{ form.conf1 }}</div>
+                            <div class="fields0"><span class="value"id="rec1_out"></span><label class="label" for="{{ form.rec1.id_for_label }}"></label>{{ form.rec1 }}</div>
+                            <div class="fields0"><span class="value"id="dth1_out"></span><label class="label" for="{{ form.dth1.id_for_label }}"></label>{{ form.dth1 }}</div>
+                            <div class="fields0"><span class="value"id="un1_out"></span><label class="label" for="{{ form.un1.id_for_label }}"></label>{{ form.un1 }}</div>
+                            <div class="fields0"><span class="value"id="gas1_out"></span><label class="label" for="{{ form.gas1.id_for_label }}"></label>{{ form.gas1 }}</div>
+                            <div class="fields0"><span class="value"id="dies1_out"></span><label class="label" for="{{ form.dies1.id_for_label }}"></label>{{ form.dies1 }}</div> 
+                            <!--<div class="fields0"><span class="value"id="sel1_out"></span><label class="label" for="{{ form.sel1.id_for_label }}"></label>{{ form.sel1 }}</div> -->
+                        </div> <!-- end row 1 -->
+                        <!--<div id="row2" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d2.id_for_label }}"></label>{{ form.d2}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t2.id_for_label }}"></label>{{ form.t2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf2.id_for_label }}"></label>{{ form.conf2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec2.id_for_label }}"></label>{{ form.rec2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth2.id_for_label }}"></label>{{ form.dth2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un2.id_for_label }}"></label>{{ form.un2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas2.id_for_label }}"></label>{{ form.gas2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies2.id_for_label }}"></label>{{ form.dies2 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel2.id_for_label }}"></label>{{ form.sel2 }}</div> 
+                        </div>--> <!-- end row 2 -->
+                        <!--<div id="row3" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d3.id_for_label }}"></label>{{ form.d3}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t3.id_for_label }}"></label>{{ form.t3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf3.id_for_label }}"></label>{{ form.conf3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec3.id_for_label }}"></label>{{ form.rec3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth3.id_for_label }}"></label>{{ form.dth3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un3.id_for_label }}"></label>{{ form.un3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas3.id_for_label }}"></label>{{ form.gas3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies3.id_for_label }}"></label>{{ form.dies3 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel3.id_for_label }}"></label>{{ form.sel3 }}</div> 
+                        </div>--> <!-- end row 3 -->
+                        <!--<div id="row4" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d4.id_for_label }}"></label>{{ form.d4}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t4.id_for_label }}"></label>{{ form.t4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf4.id_for_label }}"></label>{{ form.conf4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec4.id_for_label }}"></label>{{ form.rec4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth4.id_for_label }}"></label>{{ form.dth4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un4.id_for_label }}"></label>{{ form.un4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas4.id_for_label }}"></label>{{ form.gas4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies4.id_for_label }}"></label>{{ form.dies4 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel4.id_for_label }}"></label>{{ form.sel4 }}</div> 
+                        </div>--> <!-- end row 4 -->
+                        <!--<div id="row5" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d5.id_for_label }}"></label>{{ form.d5}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t5.id_for_label }}"></label>{{ form.t5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf5.id_for_label }}"></label>{{ form.conf5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec5.id_for_label }}"></label>{{ form.rec5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth5.id_for_label }}"></label>{{ form.dth5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un5.id_for_label }}"></label>{{ form.un5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas5.id_for_label }}"></label>{{ form.gas5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies5.id_for_label }}"></label>{{ form.dies5 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel5.id_for_label }}"></label>{{ form.sel5 }}</div> 
+                        </div>--> <!-- end row 5 -->
+                        <!--<div id="row6" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d6.id_for_label }}"></label>{{ form.d6}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t6.id_for_label }}"></label>{{ form.t6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf6.id_for_label }}"></label>{{ form.conf6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec6.id_for_label }}"></label>{{ form.rec6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth6.id_for_label }}"></label>{{ form.dth6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un6.id_for_label }}"></label>{{ form.un6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas6.id_for_label }}"></label>{{ form.gas6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies6.id_for_label }}"></label>{{ form.dies6 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel6.id_for_label }}"></label>{{ form.sel6 }}</div> 
+                        </div>--> <!-- end row 6 -->
+                        <div id="submit"><input type="submit" value="Submit"></div>
+                    </form>
+                </div> <!-- end id "form_box" -->
+            </div> <!-- end id "main" -->
+        </div> <!-- end id "text"-->
     </body>
 </html>
