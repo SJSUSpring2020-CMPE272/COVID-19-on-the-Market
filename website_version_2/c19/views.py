@@ -19,3 +19,8 @@ def index(request):
     template = loader.get_template('base.html')
     return HttpResponse(template.render(context, request))
     #return HttpResponse("Hello, world. You're at the c19 index.")
+
+def login(request):
+    context = {}
+    template = loader.get_template('login.html')
+    return HttpResponse(template.render(context, request))
