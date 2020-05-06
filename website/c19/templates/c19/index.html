@@ -6,72 +6,32 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/c19c.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>        
         <title>C19 Test Page</title>
         <script>
-            window.onload = function exampleFunction() { 
-                /*
-                $(".fields0").each(function () {
-                    // $this is a reference to .slider in current iteration of each
-                    var $this = $(this);
-                    // find any .slider-range element WITHIN scope of $this
-                    $(".slider-range", $this).slider({
-                        range: true,
-                        min: 0,
-                        max: 100,
-                        values: [30, 60],
-                        slide: function (event, ui) {
-                            // find any element with class .amount WITHIN scope of $this
-                            $(".value", $this).val("$this.value")
-                            $(".value", $this).val("$" + ui.values[0] + " - $" + ui.values[1]);
-                        }
+
+            $(document).ready(function(){
+                $(".fields0").each(function() {
+                    var field = $(this);
+                    $(".slider-range", field).each( function() {
+                        var slider = $(this);
+                        // changing span value
+                        $(".value", field).html(slider.val());
+                        // change text input value
+                        $(".input-value", field).val(slider.val());
+                        $(".input-value", field).on('input', function() {
+                            var input_value = $(this);
+                            $(slider).val(input_value.val())
+                        });
+                        $(slider).on('input', function() {
+                            $(".value", field).html(slider.val());
+                            $(".input-value", field).val(slider.val())
+                        });
+                        
                     });
-                    //$(".amount").val("$" + $(".slider-range").slider("values", 0) + " - $" + $(".slider-range").slider("values", 1));
-                });    
-                */
+                });
+            });
 
-
-            
-                var d1_slider = document.getElementById("d1_range");
-                var d1_output = document.getElementById("d1_out");
-                d1_output.innerHTML = d1_slider.value; // Display the default slider value
-                d1_slider.oninput = function() { d1_output.innerHTML = this.value; }
-                
-                var t1_slider = document.getElementById("t1_range");
-                var t1_output = document.getElementById("t1_out");
-                t1_output.innerHTML = t1_slider.value; // Display the default slider value
-                t1_slider.oninput = function() { t1_output.innerHTML = this.value; }
-                
-                var conf1_slider = document.getElementById("conf1_range");
-                var conf1_output = document.getElementById("conf1_out");
-                conf1_output.innerHTML = conf1_slider.value; // Display the default slider value
-                conf1_slider.oninput = function() { conf1_output.innerHTML = this.value; }
-                
-                var rec1_slider = document.getElementById("rec1_range");
-                var rec1_output = document.getElementById("rec1_out");
-                rec1_output.innerHTML = rec1_slider.value; // Display the default slider value
-                rec1_slider.oninput = function() { rec1_output.innerHTML = this.value; }
-                
-                var dth1_slider = document.getElementById("dth1_range");
-                var dth1_output = document.getElementById("dth1_out");
-                dth1_output.innerHTML = dth1_slider.value; // Display the default slider value
-                dth1_slider.oninput = function() { dth1_output.innerHTML = this.value; }
-                
-                var un1_slider = document.getElementById("un1_range");
-                var un1_output = document.getElementById("un1_out");
-                un1_output.innerHTML = un1_slider.value; // Display the default slider value
-                un1_slider.oninput = function() { un1_output.innerHTML = this.value; }
-                
-                var gas1_slider = document.getElementById("gas1_range");
-                var gas1_output = document.getElementById("gas1_out");
-                gas1_output.innerHTML = gas1_slider.value; // Display the default slider value
-                gas1_slider.oninput = function() { gas1_output.innerHTML = this.value; }
-                
-                var dies1_slider = document.getElementById("dies1_range");
-                var dies1_output = document.getElementById("dies1_out");
-                dies1_output.innerHTML = dies1_slider.value; // Display the default slider value
-                dies1_slider.oninput = function() { dies1_output.innerHTML = this.value; }
-
-            }
         </script>
     </head>
     <body>
@@ -86,18 +46,20 @@
                 </div>
                 <div id="form_box">
                     <h1 id='enter_fields'>Enter fields:</h1>
-                    <form action="/c19/receive" method="post" >
+                    <form action="/c19/receive" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ form.non_field_errors }}
                         <div id="row1" class="row">
-                            <div class="fields0" ><span class="value"id="d1_out"></span><label class="label" for="{{ form.d1.id_for_label }}"></label>{{ form.d1}}</div>
-                            <div class="fields0"><span class="value"id="t1_out"></span><label class="label" for="{{ form.t1.id_for_label }}"></label>{{ form.t1 }}</div>
-                            <div class="fields0"><span class="value"id="conf1_out"></span><label class="label" for="{{ form.conf1.id_for_label }}"></label>{{ form.conf1 }}</div>
-                            <div class="fields0"><span class="value"id="rec1_out"></span><label class="label" for="{{ form.rec1.id_for_label }}"></label>{{ form.rec1 }}</div>
-                            <div class="fields0"><span class="value"id="dth1_out"></span><label class="label" for="{{ form.dth1.id_for_label }}"></label>{{ form.dth1 }}</div>
-                            <div class="fields0"><span class="value"id="un1_out"></span><label class="label" for="{{ form.un1.id_for_label }}"></label>{{ form.un1 }}</div>
-                            <div class="fields0"><span class="value"id="gas1_out"></span><label class="label" for="{{ form.gas1.id_for_label }}"></label>{{ form.gas1 }}</div>
-                            <div class="fields0"><span class="value"id="dies1_out"></span><label class="label" for="{{ form.dies1.id_for_label }}"></label>{{ form.dies1 }}</div> 
+                            <!--<div class="fields0" ><span class="value"id="d1_out"></span><label class="label" for="{{ form.d1.id_for_label }}"></label>{{ form.d1}}</div>-->
+                            <div class="fields0" ><!--<span class="value"id="d1_out"></span>-->{{ form.d1_}}{{form.d1}}</div>
+                            <div class="fields0">{{ form.t1_ }}{{ form.t1 }}</div>
+                            <div class="fields0">{{ form.conf1_ }}{{ form.conf1 }}</div>
+                            <div class="fields0">{{ form.rec1_ }}{{ form.rec1 }}</div>
+                            <div class="fields0">{{ form.dth1_ }}{{ form.dth1 }}</div>
+                            <div class="fields0">{{ form.un1_ }}{{ form.un1 }}</div>
+                            <div class="fields0">{{ form.gas1_ }}{{ form.gas1 }}</div>
+                            <div class="fields0">{{ form.dies1_ }}{{ form.dies1 }}</div> 
+                            {{form.file}}
                             <!--<div class="fields0"><span class="value"id="sel1_out"></span><label class="label" for="{{ form.sel1.id_for_label }}"></label>{{ form.sel1 }}</div> -->
                         </div> <!-- end row 1 -->
                         <!--<div id="row2" class="row">

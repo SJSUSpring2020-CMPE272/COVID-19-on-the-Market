@@ -128,11 +128,39 @@ form {
     margin-right: 7px;
   }
 
+  
+
 .value {
     
     /*border: 1px solid red;*/
     margin-bottom: 3px;
     display: inline-block;
+}
+
+.input-value {
+      background-color: transparent;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: white;
+      border: 1px solid transparent;
+      -webkit-transition : border-color .5s t;
+      -moz-transition : border-color .5s ;
+      -o-transition : border-color .5s ;
+      transition : border-color .5s ;
+      border-radius: 5px;
+      
+}
+
+.input-value:hover {
+    border: 1px solid white;
+    cursor: text;
+}
+
+.input-value:focus {
+    outline:none;
+    border: 1px solid white;
+    cursor: text;
 }
 
   /* The slider itself */
@@ -180,4 +208,8 @@ form {
 
   .value {
     color: white;
+  }
+
+  ::selection {
+    background: black; /* WebKit/Blink Browsers */
   }

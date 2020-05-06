@@ -143,7 +143,7 @@ def getPrediction(input_payload):
 def receive(request):
     if (request.method == 'POST'):
             print("In receive: got post request")
-            form = FieldsForm(request.POST)
+            form = FieldsForm(request.POST, request.FILES)
             context = {}
             if form.is_valid():
                 print("The form was valid.")
@@ -163,6 +163,11 @@ def receive(request):
                 print("un1 = %f" % Decimal(un1))
                 print("gas1 = %f" % Decimal(gas1))
                 print("dies1 = %f" % Decimal(dies1))
+                csv = request.FILES['file']
+                data = convertCSV(csv)
+                print("data = ", data)
+            else:
+                print("Form was not valid.")
 
             return redirect('/c19/')
             '''if (request.method == 'POST'):
@@ -198,9 +203,14 @@ def receive(request):
         template = loader.get_template('c19/form_entered.html')
         return HttpResponse(template.render(context, request))'''
 
+def convertCSV(filename):
+    f = pd.read_csv(filename)
+    arr = f.values.tolist()
+    return arr 
+
 def index(request):
     
-            
+    print("in index")
     run_script()
     form = FieldsForm()
     context = {'form': form}
