@@ -18,7 +18,7 @@
 
 # yathu's credentials
 # "ml_instance_id": "e3ac4a09-8322-48a8-b5ab-95ecc4d0924e"
-# "apikey": "7SddOmPfjxJu27xUfPzgilmM3P8xTQ3tQmv5C32oCqYn"
+# "apikey": "SQu0y8zp7XZNk216RxUY-wZuJmuU9A6oV4vSBN0Yjq1_"
 
 
 def getPrediction(iam_token, valueArray):
