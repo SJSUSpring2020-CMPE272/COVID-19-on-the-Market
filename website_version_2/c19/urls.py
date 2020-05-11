@@ -16,5 +16,21 @@ urlpatterns = [
      path('receive_csv_un', views.receive_csv_un),
     path('graph_un', views.graph_un),
 
+    path('buttons', views.buttons),
+    path('cards', views.cards),
+    path('register', views.register),
+    path('forgotpassword', views.forgotpassword),
+
+    path('404page', views.fourpage),
+    path('blankpage', views.blankpage),
+
+    path('charts', views.charts),
+    path('tables', views.tables),
+
+    path('colors', views.colors),
+    path('borders', views.borders),
+    path('animations', views.animations),
+    path('other', views.other),
+
 
 ]

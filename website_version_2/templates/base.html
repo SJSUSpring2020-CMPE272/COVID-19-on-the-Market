@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>C19 - Dashboard</title>
   
   <!--added -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>  
@@ -25,6 +25,10 @@
 
   <!-- added -->
   <style>
+
+    .iframe-loader {
+      background:url(../static/img/loader2.gif) center center no-repeat;
+    }
 
     .file-upload {
   background-color: #ffffff;
@@ -238,12 +242,24 @@
           });
 
 
+    
+    //$(window).load(function() {
+      //setTimeout(function(){ $('.holds-the-iframe').fadeOut('slow'); }, 5000);
+      //setTimeout(function(){ $('#holds-the-iframe').hide();
+      //console.log("in window load")
+      //$('#holds-the-iframe').hide();
 
-
+    //});
 
     $(document).ready(function(){
+      $('#wrapper').fadeIn(1100);
 
+      setTimeout(function(){ $('.iframe-loader').fadeOut('slow'); }, 4000);
+      setTimeout(function(){ $('.iframe-graph') .fadeIn('slow'); }, 5000);
 
+     console.log("in window load")
+      //$('#holds-the-iframe').hide();
+     
       function readURL(input) {
             if (input.files && input.files[0]) {
 
@@ -306,7 +322,7 @@
 <body id="page-top">
 
   <!-- Page Wrapper -->
-  <div id="wrapper">
+  <div id="wrapper" style="display: none;">
 
     <!-- Sidebar -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -314,9 +330,10 @@
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
+          <i class="fas fa-chart-line"></i>
+          <!--<i class="fas fa-dollar-sign"></i>-->
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Covid-19-on-the-Market</div>
       </a>
 
       <!-- Divider -->
@@ -324,8 +341,9 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="/c19">
+          <!--<i class="fas fa-fw fa-tachometer-alt"></i>-->
+          <i class="fas fa-chart-pie"></i>
           <span>Dashboard</span></a>
       </li>
 
@@ -334,20 +352,22 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Predictions
       </div>
 
       <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
+          <i class="fas fa-balance-scale-left"></i>
+          <span>Get New Predictions</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
+            <h6 class="collapse-header">Predictions Available</h6>
+            <a class="collapse-item" href="prediction_sp">Predict the S&amp;P 500</a>
+            <a class="collapse-item" href="prediction_dj">Predict the Dow Jones</a>
+            <a class="collapse-item" href="prediction_un">Predict Unemployment</a>
+
           </div>
         </div>
       </li>
@@ -355,16 +375,17 @@
       <!-- Nav Item - Utilities Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
+          <i class="fas fa-hand-holding-usd"></i>
+          <span>See My Predictions</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <h6 class="collapse-header">Predictions Available</h6>
+            <!--<a class="collapse-item" href="utilities-color.html">Colors</a>
             <a class="collapse-item" href="utilities-border.html">Borders</a>
             <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>-->
+            <a class="collapse-item" href="blankpage">My Predictions</a>
           </div>
         </div>
       </li>
@@ -373,11 +394,10 @@
       <hr class="sidebar-divider">
 
       <!-- Heading -->
-      <div class="sidebar-heading">
+      <!--<div class="sidebar-heading">
         Addons
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
           <i class="fas fa-fw fa-folder"></i>
@@ -402,22 +422,22 @@
         </div>
       </li>
 
-      <!-- Nav Item - Charts -->
       <li class="nav-item">
         <a class="nav-link" href="charts.html">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Charts</span></a>
       </li>
 
-      <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="tables.html">
           <i class="fas fa-fw fa-table"></i>
           <span>Tables</span></a>
       </li>
 
-      <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
+
+
+    -->
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -442,7 +462,7 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+          <!--<form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
@@ -451,17 +471,17 @@
                 </button>
               </div>
             </div>
-          </form>
+          </form>-->
+          <h6><b><i>Predict the future. Grow your assets.</i></b></h6>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-            <li class="nav-item dropdown no-arrow d-sm-none">
+            <!--<li class="nav-item dropdown no-arrow d-sm-none">
               <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-search fa-fw"></i>
               </a>
-              <!-- Dropdown - Messages -->
               <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                 <form class="form-inline mr-auto w-100 navbar-search">
                   <div class="input-group">
@@ -474,16 +494,14 @@
                   </div>
                 </form>
               </div>
-            </li>
+            </li>-->
 
             <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
+            <!--<li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
                 <span class="badge badge-danger badge-counter">3+</span>
               </a>
-              <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
                   Alerts Center
@@ -523,16 +541,14 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
               </div>
-            </li>
+            </li>-->
 
             <!-- Nav Item - Messages -->
-            <li class="nav-item dropdown no-arrow mx-1">
+            <!--<li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-envelope fa-fw"></i>
-                <!-- Counter - Messages -->
                 <span class="badge badge-danger badge-counter">7</span>
               </a>
-              <!-- Dropdown - Messages -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
                 <h6 class="dropdown-header">
                   Message Center
@@ -579,7 +595,7 @@
                 </a>
                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
               </div>
-            </li>
+            </li>-->
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -725,12 +741,12 @@
 
           <!-- Content Row -->
 
-          <div class="row" style="border: 2px solid red;">
+          <div class="row" style="border: none;">
 
             <!-- Area Chart -->
             <!-- 8, 7 -->
-            <div  style="width: 600px !important; border: 2px solid orange; display: inline-block; padding: 10px; margin: 10px;">
-              <div class="card shadow mb-4" style="width: 600px; border: 2px solid purple; margin: 0px;">
+            <div  style="width: 600px !important;  display: inline-block; padding: 10px; margin: 10px;">
+              <div class="card shadow mb-4" style="width: 600px;  margin: 0px;">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">DGS10</h6>
@@ -748,23 +764,18 @@
                   </div>
                 </div>
                 <!-- Card Body -->
-                <div class="card-body" style="border: 2px solid red; padding: 0px; height: 395px;">
-                  <div class="chart-area" style="border: 2px solid yellow; height: 395px">
-                    <!--<canvas id="myAreaChart"></canvas>-->
-                      <!--<canvas id="myAreaChart"> -->
-                          <!--<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19" style="width: 80%; height: 350px; border: 0px none;"></iframe>-->
-                          <!--<iframe src="file:///C:/Users/Michaela/Documents/SJSU/Spring%202020/CMPE%20272/GroupProject/clone_of_group_repo_2/COVID-19-on-the-Market/Watson_Python_Script/testimage1.html" style="width: 80%; height: 350px; border: 0px none;"></iframe>-->
-                        <!--<img src="{% static 'img/test_graph_orig.png' %}" alt="image did not work" height="300" width="400">-->
-                        <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=qWjN&width=590&height=400" scrolling="no" frameborder="0"style="overflow:hidden; width:590px; height:390px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;" allowTransparency="true" loading="lazy"></iframe>
-
+                <div class="card-body" style=" padding: 0px; height: 395px;">
+                  <div class="chart-area" style=" height: 395px; text-align: center; padding-top: 3px;">
+                        <iframe class="iframe-graph" src="https://fred.stlouisfed.org/graph/graph-landing.php?g=qWjN&width=590&height=400" scrolling="no" frameborder="0"style="overflow:hidden; width:590px; height:390px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; display: none;" allowTransparency="true" loading="lazy"></iframe>
+                        <div class="iframe-loader" style="height: 395px;"></div>
                         <!--</canvas>-->
                   </div>
                 </div>
               </div>
             </div>
             <!--class="col-xl-8 col-lg-7" -->
-            <div  style="width: 600px !important; border: 2px solid orange; display: inline-block; padding: 10px; margin: 10px;">
-                <div class="card shadow mb-4" style="width: 600px; border: 2px solid purple;">
+            <div  style="width: 600px !important;  display: inline-block; padding: 10px; margin: 10px;">
+                <div class="card shadow mb-4" style="width: 600px; ">
                   <!-- Card Header - Dropdown -->
                   <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">T10YIE</h6>
@@ -782,20 +793,159 @@
                     </div>
                   </div>
                   <!-- Card Body -->
-                  <div class="card-body" style="border: 2px solid red; padding: 0px; height: 395px;">
-                    <div class="chart-area" style="border: 2px solid yellow; height: 395px">
+                  <div class="card-body" style=" padding: 0px; height: 395px;">
+                    <div class="chart-area" style="height: 395px;  text-align: center; padding-top: 3px;">
                       <!--<canvas id="myAreaChart"></canvas>-->
                         <!--<canvas id="myAreaChart"> -->
                             <!--<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19" style="width: 80%; height: 350px; border: 0px none;"></iframe>-->
                             <!--<iframe src="file:///C:/Users/Michaela/Documents/SJSU/Spring%202020/CMPE%20272/GroupProject/clone_of_group_repo_2/COVID-19-on-the-Market/Watson_Python_Script/testimage1.html" style="width: 80%; height: 350px; border: 0px none;"></iframe>-->
                           <!--<img src="{% static 'img/test_graph_orig.png' %}" alt="image did not work" height="300" width="400">-->
-                          <iframe src="https://fred.stlouisfed.org/graph/graph-landing.php?g=qWjP&width=590&height=400" scrolling="no" frameborder="0"style="overflow:hidden; width:590px; height:390px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;" allowTransparency="true" loading="lazy"></iframe>
+                          <iframe class="iframe-graph" src="https://fred.stlouisfed.org/graph/graph-landing.php?g=qWjP&width=590&height=400" scrolling="no" frameborder="0"style="overflow:hidden; width:590px; height:390px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; display: none;" allowTransparency="true" loading="lazy"></iframe>
+                          <div class="iframe-loader" style="height: 395px;"></div>
+
                           <!--</canvas>-->
                     </div>
                   </div>
                 </div>
               </div>
+</div> <!-- end row -->
+
+<!-- row 2 -->
+<div class="row" style="border: none;">
+    <!-- 8, 7 -->
+    <div  style="width: 600px !important;  display: inline-block; padding: 10px; margin: 10px;">
+      <div class="card shadow mb-4" style="width: 600px;  margin: 0px;">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">COVID-19 Statistics Overview</h6>
+          <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+              <div class="dropdown-header">Dropdown Header:</div>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body" style=" padding: 0px; height: 395px;">
+          <div class="chart-area" style=" height: 395px; text-align: center; padding-top: 3px;">
+                <iframe width="590" height="390" frameborder="0" scrolling="no" src="//plotly.com/~rhong5/1.embed"></iframe>
+                <!--</canvas>-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--class="col-xl-8 col-lg-7" -->
+    <div  style="width: 600px !important;  display: inline-block; padding: 10px; margin: 10px;">
+        <div class="card shadow mb-4" style="width: 600px; ">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">Gas Prices Overview</h6>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body" style=" padding: 0px; height: 395px;">
+            <div class="chart-area" style="height: 395px;  text-align: center; padding-top: 3px;">
+                  <iframe width="590" height="390" frameborder="0" scrolling="no" src="//plotly.com/~rhong5/3.embed"></iframe>
+                  <!--</canvas>-->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+
+
 </div>
+<!-- end row 2 -->
+<!-- begin row 3 -->
+
+<div class="row" style="border: none;">
+    <!-- 8, 7 -->
+    <div  style="width: 600px !important;  display: inline-block; padding: 10px; margin: 10px;">
+      <div class="card shadow mb-4" style="width: 600px;  margin: 0px;">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+          <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">Stock Market Overview</h6>
+          <div class="dropdown no-arrow">
+            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+              <div class="dropdown-header">Dropdown Header:</div>
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+        <!-- Card Body -->
+        <div class="card-body" style=" padding: 0px; height: 395px;">
+          <div class="chart-area" style=" height: 395px; text-align: center; padding-top: 3px;">
+                <iframe width="590" height="390" frameborder="0" scrolling="no" src="//plotly.com/~rhong5/4.embed"></iframe>
+                <!--</canvas>-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div  style="width: 600px !important;  display: inline-block; padding: 10px; margin: 10px;">
+        <div class="card shadow mb-4" style="width: 600px; ">
+          <!-- Card Header - Dropdown -->
+          <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">Unemployment Overview</h6>
+            <div class="dropdown no-arrow">
+              <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                <div class="dropdown-header">Dropdown Header:</div>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <!-- Card Body -->
+          <div class="card-body" style=" padding: 0px; height: 395px;">
+            <div class="chart-area" style="height: 395px;  text-align: center; padding-top: 3px;">
+              <!--<canvas id="myAreaChart"></canvas>-->
+                <!--<canvas id="myAreaChart"> -->
+                    <!--<iframe src="https://ourworldindata.org/grapher/total-deaths-covid-19" style="width: 80%; height: 350px; border: 0px none;"></iframe>-->
+                    <!--<iframe src="file:///C:/Users/Michaela/Documents/SJSU/Spring%202020/CMPE%20272/GroupProject/clone_of_group_repo_2/COVID-19-on-the-Market/Watson_Python_Script/testimage1.html" style="width: 80%; height: 350px; border: 0px none;"></iframe>-->
+                  <!--<img src="{% static 'img/test_graph_orig.png' %}" alt="image did not work" height="300" width="400">-->
+                  <iframe class="iframe-graph" src="https://fred.stlouisfed.org/graph/graph-landing.php?g=qVtN&width=590&height=400" scrolling="no" frameborder="0"style="overflow:hidden; width:590px; height:390px; border-bottom-left-radius: 15px; border-bottom-right-radius: 15px; display: none;" allowTransparency="true" loading="lazy"></iframe>
+                  <div class="iframe-loader" style="height: 395px;"></div>
+
+                  <!--</canvas>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    
+</div>
+<!-- end row 3 -->
+
+
+<!-- default stuff -->
             <!-- Pie Chart -->
             <!--<div class="col-xl-4 col-lg-5">
               <div class="card shadow mb-4"> -->
@@ -838,12 +988,10 @@
           <!--</div>-->
 
           <!-- Content Row -->
-          <div class="row">
+          <!--<div class="row">
 
-            <!-- Content Column -->
             <div class="col-lg-6 mb-4">
 
-              <!-- Project Card Example -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
@@ -872,7 +1020,6 @@
                 </div>
               </div>
 
-              <!-- Color System -->
               <div class="row">
                 <div class="col-lg-6 mb-4">
                   <div class="card bg-primary text-white shadow">
@@ -928,7 +1075,6 @@
 
             <div class="col-lg-6 mb-4">
 
-              <!-- Illustrations -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Illustrations</h6>
@@ -942,7 +1088,6 @@
                 </div>
               </div>
 
-              <!-- Approach -->
               <div class="card shadow mb-4">
                 <div class="card-header py-3">
                   <h6 class="m-0 font-weight-bold text-primary">Development Approach</h6>
@@ -956,7 +1101,7 @@
             </div>
           </div>
 
-        </div>
+        </div>-->
         <!-- /.container-fluid -->
         {% endblock content %}
 

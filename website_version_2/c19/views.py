@@ -399,4 +399,66 @@ def graph_un(request):
     template = loader.get_template('graph_un.html')
     return HttpResponse(template.render(context, request))
 
+def buttons(request):
+    context = {}    
+    template = loader.get_template('buttons.html')
+    return HttpResponse(template.render(context, request))
+
+
+def cards(request):
+    context = {}    
+    template = loader.get_template('cards.html')
+    return HttpResponse(template.render(context, request))
+
+def register(request):
+    context = {}    
+    template = loader.get_template('register.html')
+    return HttpResponse(template.render(context, request))
+
+def forgotpassword(request):
+    context = {}    
+    template = loader.get_template('forgot-password.html')
+    return HttpResponse(template.render(context, request))
+
+def fourpage(request):
+    context = {}    
+    template = loader.get_template('404.html')
+    return HttpResponse(template.render(context, request))
+
+def blankpage(request):
+    context = {}    
+    template = loader.get_template('blank.html')
+    return HttpResponse(template.render(context, request))
+
+def charts(request):
+    context = {}    
+    template = loader.get_template('charts.html')
+    return HttpResponse(template.render(context, request))
+
+def tables(request):
+    context = {}    
+    template = loader.get_template('tables.html')
+    return HttpResponse(template.render(context, request))
+
+def colors(request):
+    context = {}    
+    template = loader.get_template('utilities-color.html')
+    return HttpResponse(template.render(context, request))
+
+def borders(request):
+    context = {}    
+    template = loader.get_template('utilities-border.html')
+    return HttpResponse(template.render(context, request))
+
+def animations(request):
+    context = {}    
+    template = loader.get_template('utilities-animation.html')
+    return HttpResponse(template.render(context, request))
+
+def other(request):
+    context = {}    
+    template = loader.get_template('utilities-other.html')
+    return HttpResponse(template.render(context, request))
+
+
 
