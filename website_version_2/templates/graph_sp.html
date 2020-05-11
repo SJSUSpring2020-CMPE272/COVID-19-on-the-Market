@@ -25,9 +25,9 @@
       <div class="toggle-ca h5 mb-0 font-weight-bold text-gray-800" style=" display: inline-block; vertical-align: text-bottom; margin-left: 10px; height: 38px; ">Manual Input</div>-->
           <div class='h5 mb-0 font-weight-bold text-gray-800' style='height: 44px'></div>
         <!-- row 1 -->
-        <div class="row" style="border: 2px solid red; height: 600px;">
-                <div  style="width: 1500px !important; border: 2px solid orange; display: inline-block; padding: 10px; margin: 10px; height: 400px;">
-                  <div class="card shadow mb-4" style="width: 1200px; border: 2px solid purple; margin: 0px; height: 500px !important;">
+        <div class="row" style=" height: 600px;">
+                <div  style="width: 1500px !important; display: inline-block; padding: 10px; margin: 10px; height: 400px;">
+                  <div class="card shadow mb-4" style="width: 1200px; margin: 0px; height: 500px !important;">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                       <h6 class="m-0 font-weight-bold text-gray-800" style="color: rgb(0, 0, 153) !important;">The next {{ request.session.rows }} days of the S&ampP 500 market:</h6>
@@ -45,8 +45,8 @@
                       </div>
                     </div>
                     <!-- Card Body -->
-                    <div class="card-body" style="border: 2px solid red; padding: 0px; height: 500px;">
-                      <div class="chart-area" style="border: 2px solid yellow; height: 500px; text-align: center;">
+                    <div class="card-body" style=" padding: 0px; height: 500px;">
+                      <div class="chart-area" style="height: 500px; text-align: center;">
                            
                             <div id="img_box">
                                     <img src="{% static 'img/sp_graph.png' %}" alt="image did not work" height="400" width="500">

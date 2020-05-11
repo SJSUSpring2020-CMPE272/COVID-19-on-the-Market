@@ -26,6 +26,134 @@
   <!-- added -->
   <style>
 
+    .all-form {
+      margin-top: 20px; 
+      position: relative;
+      height: 400px; 
+    }
+
+    .form-submit {
+      background: rgb(201, 192, 192);
+      border: none; 
+      color: black;
+      border-radius: 15px;
+      height:100%;
+    }
+
+    .form-submit-box {
+      text-align: center; 
+      margin-top: 70px;
+      vertical-align: baseline;
+      position: absolute; 
+      bottom: 30px;
+      left: 550px;
+    }
+     
+
+    .form-submit:hover {
+      cursor: pointer;
+      background: rgb(157, 146, 146);
+    }
+
+    input[type=checkbox]{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+    }
+
+    input[type=checkbox]:hover{
+      cursor: pointer;
+    }
+
+    .slider-row {
+      text-align: center;
+    }
+
+    .input-value {
+      background-color: transparent;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      color: rgb(0, 0, 153) ;
+      color: black;
+      border: 1.5px solid transparent;
+      -webkit-transition : border-color .5s t;
+      -moz-transition : border-color .5s ;
+      -o-transition : border-color .5s ;
+      transition : border-color .5s ;
+      border-radius: 5px;
+      margin-bottom: 2px;
+}
+
+.input-value:hover {
+    border: 1.5px solid rgb(0, 0, 153) ;
+    cursor: text;
+}
+
+.input-value:focus {
+    outline:none;
+    border: 1.5px solid rgb(0, 0, 153) ;
+    cursor: text;
+}
+
+    /* The slider itself */
+  input[type=range] {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 5px; /* Specified height */
+    background: rgb(0, 0, 153) ; /* Grey background */
+    border-radius: 5px;
+    outline: none; /* Remove outline */
+    opacity: .9; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+    border: none;
+    display: block;
+  }
+  
+  /* Mouse-over effects */
+  input[type=range]:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+    cursor: pointer;
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: rgb(113, 113, 122); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;  
+    
+  }
+  
+  /* handle*/
+  .slider::-moz-range-thumb {
+    width: 15px; /* Set a specific slider handle width */
+    height: 15px; /* Slider handle height */
+    background: rgb(113, 113, 122); /* Green background */
+    cursor: pointer; /* Cursor on hover */
+    border-radius: 50%;  
+  }
+
+    .fields0 {
+    width: 90px; /* Width of the outside container */
+    display: inline-block;
+    /*border: 1px solid yellow;*/
+    height: 30px;
+    text-align: center;
+    font-family: "Lucida Console", Courier, monospace;
+    margin-left: 7px;
+    margin-right: 7px;
+  }
+
     .iframe-loader {
       background:url(../static/img/loader2.gif) center center no-repeat;
     }
@@ -252,6 +380,36 @@
     //});
 
     $(document).ready(function(){
+
+
+
+
+                $(".fields0").each(function() {
+                    var field = $(this);
+                    $(".slider-range", field).each( function() {
+                        var slider = $(this);
+                        // changing span value
+                        $(".value", field).html(slider.val());
+                        // change text input value
+                        $(".input-value", field).val(slider.val());
+                        $(".input-value", field).on('input', function() {
+                            var input_value = $(this);
+                            $(slider).val(input_value.val())
+                        });
+                        $(slider).on('input', function() {
+                            $(".value", field).html(slider.val());
+                            $(".input-value", field).val(slider.val())
+                        });
+                        
+                    });
+                });
+
+
+
+
+
+
+
       $('#wrapper').fadeIn(1100);
 
       setTimeout(function(){ $('.iframe-loader').fadeOut('slow'); }, 4000);
@@ -307,11 +465,24 @@
        }
         //$(".toggle-ca").hide();
         
-     });
+      });
+
+      $(".input-toggle").hide(); 
+      $("#switch-input").click(function() {
+       if ($("input[id=switch-input]").is(":checked")) {
+          $(".csv-toggle").hide();
+          $(".input-toggle").show();
+       } else {
+          $(".input-toggle").hide();
+          $(".csv-toggle").show();
+       }
+        //$(".toggle-ca").hide();
+        
+      });
      
 
 
-    });
+    });  // end doc ready
 
   </script>
   
@@ -328,7 +499,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/c19">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-chart-line"></i>
           <!--<i class="fas fa-dollar-sign"></i>-->
@@ -602,10 +773,10 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Michaela Molina</span>
+                <!--<img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
+                <i class="fas fa-smile" style="color: rgb(132, 132, 147) !important"></i>
               </a>
-              <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -1112,7 +1283,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2019</span>
+            <span>Copyright &copy; Covid-19-on-the-Market 2020</span>
           </div>
         </div>
       </footer>

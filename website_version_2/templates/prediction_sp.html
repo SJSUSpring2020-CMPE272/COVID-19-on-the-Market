@@ -11,7 +11,7 @@
 
  <!-- Page Heading -->
  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Predict the S &amp; P 500 market here.</h1>
+        <h1 class="h3 mb-0 text-gray-800">Predict the S&amp;P 500 here.</h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
       </div>
 
@@ -54,9 +54,9 @@
             </div> --><!-- end row 1-->
 
         <!-- row 2 -->
-        <div class="row" style="border: 2px solid red;  height: 600px;">
-                <div  style="width: 1500px !important; border: 2px solid orange; display: inline-block; padding: 10px; margin: 10px;  height: 400px;">
-                  <div class="card shadow mb-4" style="width: 1200px; border: 2px solid purple; margin: 0px; height: 500px !important;">
+        <div class="row csv-toggle" style=" height: 600px; ">
+                <div  style="width: 1500px !important;  display: inline-block; padding: 10px; margin: 10px;  height: 400px;">
+                  <div class="card shadow mb-4" style="width: 1200px;  margin: 0px; height: 500px !important;">
                     <!-- Card Header - Dropdown -->
                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                       <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">Get your prediction</h6>
@@ -74,15 +74,14 @@
                       </div>
                     </div>
                     <!-- Card Body -->
-                    <div class="card-body" style="border: 2px solid red; padding: 0px; height: 500px;">
-                      <div class="chart-area" style="border: 2px solid yellow; height: 500px">
-                            <form action="/c19/receive_csv" method="post" enctype="multipart/form-data">
-                                {% csrf_token %}
+                    <div class="card-body" style=" padding: 0px; height: 500px;">
+                      <div class="chart-area" style=" height: 500px">
+                            <form class="all-form" action="/c19/receive_csv" method="post" enctype="multipart/form-data" >
+                            
                             <div class="file-upload">
                                     <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Attach File</button>
-                                  
+                                    {% csrf_token %}
                                     <div class="image-upload-wrap">
-                                      <!--<input class="file-upload-input" type='file' onchange="readURL(this);" accept=".csv" />-->
                                       {{ csvform.file }}
                                       
                                       <div class="drag-text">
@@ -90,14 +89,15 @@
                                       </div>
                                     </div>
                                     <div class="file-upload-content">
-                                      <!--<img class="file-upload-image" src="#" alt="your image" />-->
                                       <p class="file-upload-image"></p>
                                       <div class="image-title-wrap">
                                         <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
                                       </div>
                                     </div>
-                            </div> <!-- end file upload -->
-                            <input type='submit' value='submit file'></input>
+                            </div> 
+                            <div class="form-submit-box">
+                                    <div id="submit"><input class="form-submit"type="submit" value="Submit" ></div>
+                                </div>
                             </form>
 
 
@@ -106,6 +106,93 @@
                   </div>
                 </div>
             </div> <!-- end row -->
+
+
+             <!-- row 2 -->
+        <div class="row input-toggle" style=" height: 600px; ">
+                <div  style="width: 1500px !important; display: inline-block; padding: 10px; margin: 10px;  height: 400px;">
+                  <div class="card shadow mb-4" style="width: 1200px;  margin: 0px; height: 500px !important;">
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 font-weight-bold text-primary" style="color: black !important;">Enter up to 3 rows of data.</h6>
+                      <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                          <div class="dropdown-header">Dropdown Header:</div>
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body" style=" padding: 0px; height: 500px;">
+                      <div class="chart-area" style=" height: 500px">
+                            <form class="all-form" action="/c19/receive_input_sp" method="post" enctype="multipart/form-data" >
+                                {% csrf_token %}
+
+                                <div class='slider-row' style="font-size: 10px; font-family: Arial, Helvetica, sans-serif; font-weight: bold; color: black !important;">
+                                        <div class="fields0">DGS10</div>
+                                        <div class="fields0">T10YIE</div>
+                                        <div class="fields0">confirmed</div>
+                                        <div class="fields0">recovered</div>
+                                        <div class="fields0">deaths</div>
+                                        <div class="fields0" style="font-size: 10px;">unemployment</div>
+                                        <div class="fields0">gas price</div>
+                                        <div class="fields0" style="font-size: 10px;">diesel price</div> 
+                                        <div class="fields0" style="font-size: 10px;">check here</div> 
+    
+                                    </div>
+
+
+                                <!--<div id="row1" class="row">-->
+                                <div class='slider-row'>
+                                    <div class="fields0" >{{ inputform.d1_}}{{inputform.d1}}</div>
+                                    <div class="fields0">{{ inputform.t1_ }}{{ inputform.t1 }}</div>
+                                    <div class="fields0">{{ inputform.conf1_ }}{{ inputform.conf1 }}</div>
+                                    <div class="fields0">{{ inputform.rec1_ }}{{ inputform.rec1 }}</div>
+                                    <div class="fields0">{{ inputform.dth1_ }}{{ inputform.dth1 }}</div>
+                                    <div class="fields0">{{ inputform.un1_ }}{{ inputform.un1 }}</div>
+                                    <div class="fields0">{{ inputform.gas1_ }}{{ inputform.gas1 }}</div>
+                                    <div class="fields0">{{ inputform.dies1_ }}{{ inputform.dies1 }}</div> 
+                                    <div class="fields0">{{ inputform.check1 }}</div> 
+
+                                </div>
+                                <div class='slider-row'>
+                                        <div class="fields0" >{{ inputform.d2_}}{{inputform.d2}}</div>
+                                        <div class="fields0">{{ inputform.t2_ }}{{ inputform.t2 }}</div>
+                                        <div class="fields0">{{ inputform.conf2_ }}{{ inputform.conf2 }}</div>
+                                        <div class="fields0">{{ inputform.rec2_ }}{{ inputform.rec2 }}</div>
+                                        <div class="fields0">{{ inputform.dth2_ }}{{ inputform.dth2 }}</div>
+                                        <div class="fields0">{{ inputform.un2_ }}{{ inputform.un2 }}</div>
+                                        <div class="fields0">{{ inputform.gas2_ }}{{ inputform.gas2 }}</div>
+                                        <div class="fields0">{{ inputform.dies2_ }}{{ inputform.dies2 }}</div> 
+                                        <div class="fields0">{{ inputform.check2 }}</div> 
+                                </div>
+                                <div class='slider-row'>
+                                        <div class="fields0" >{{ inputform.d3_}}{{inputform.d3}}</div>
+                                        <div class="fields0">{{ inputform.t3_ }}{{ inputform.t3 }}</div>
+                                        <div class="fields0">{{ inputform.conf3_ }}{{ inputform.conf3 }}</div>
+                                        <div class="fields0">{{ inputform.rec3_ }}{{ inputform.rec3 }}</div>
+                                        <div class="fields0">{{ inputform.dth3_ }}{{ inputform.dth3 }}</div>
+                                        <div class="fields0">{{ inputform.un3_ }}{{ inputform.un3 }}</div>
+                                        <div class="fields0">{{ inputform.gas3_ }}{{ inputform.gas3 }}</div>
+                                        <div class="fields0">{{ inputform.dies3_ }}{{ inputform.dies3 }}</div> 
+                                        <div class="fields0">{{ inputform.check3 }}</div> 
+                                </div>
+                                <div class="form-submit-box">
+                                        <div id="submit"><input class="form-submit"type="submit" value="Submit" ></div>
+                                    </div>
+                                </form>
+                            </form>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div> <!-- end row -->
+
 
 
 </div>

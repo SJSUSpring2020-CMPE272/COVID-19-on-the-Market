@@ -16,6 +16,8 @@ from decimal import Decimal
 import COVID19Py
 import requests
 from .forms import CSVForm
+from .forms import sp_form
+from .forms import un_form
 
 
 #=========================== S&P 500 =========================================================
@@ -141,7 +143,7 @@ def getPrediction_un(iam_token, valueArray):
 	header = {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + iam_token, 'ML-Instance-ID': ml_instance_id}
 
 	# NOTE: manually define and pass the array(s) of values to be scored in the next line
-	payload_scoring = {"input_data": [{"fields": ["Adj Close (^GSPC)", "DGS10 [%]", "T10YIE[%]", "Confirmed COVID-19 cases", "Recovered COVID-19 cases", "Deaths due to 							COVID-19 ", "Weekly U.S. All Grades All Formulations Retail Gasoline Prices  (Dollars per Gallon)", "Weekly U.S. No 2 Diesel 							Retail Prices  (Dollars per Gallon)"], 		"values": valueArray}]}
+	payload_scoring = {"input_data": [{"fields": ["Adj Close (^GSPC)", "DGS10 [%]", "T10YIE[%]", "Confirmed COVID-19 cases", "Recovered COVID-19 cases", "Deaths due to COVID-19 ", "Weekly U.S. All Grades All Formulations Retail Gasoline Prices  (Dollars per Gallon)", "Weekly U.S. No 2 Diesel Retail Prices  (Dollars per Gallon)"], 		"values": valueArray}]}
 
 	response_scoring = requests.post('https://us-south.ml.cloud.ibm.com/v4/deployments/2a522dc4-098d-4187-9063-01089fa2db78/predictions', json=payload_scoring, headers=header)
 	print("Scoring response")
@@ -292,6 +294,208 @@ def receive_csv(request):
                 print("Form was not valid.")
             return redirect('/c19/graph_sp')    
 
+def receive_input_sp(request):
+    if (request.method == 'POST'):
+            print("In receive: got post request")
+            form = sp_form(request.POST, request.FILES)
+            context = {}
+            value_array = []
+            if form.is_valid():
+                print("The form was valid.")
+                inner = []
+                d1 = form.cleaned_data['d1']
+                t1 = form.cleaned_data['t1']
+                conf1 = form.cleaned_data['conf1']
+                rec1 = form.cleaned_data['rec1']
+                dth1 = form.cleaned_data['dth1']
+                un1 = form.cleaned_data['un1']
+                gas1 = form.cleaned_data['gas1']
+                dies1 = form.cleaned_data['dies1']
+                check1 = form.cleaned_data['check1']
+                #print("d1 = %f" % Decimal(d1))
+                #print("t1 = %f" % Decimal(t1))
+                #print("conf1 = %d" % Decimal(conf1))
+                #print("rec1 = %d" % Decimal(rec1))
+                #print("dth1 = %d" % Decimal(dth1))
+                #print("un1 = %f" % Decimal(un1))
+                #print("gas1 = %f" % Decimal(gas1))
+                #print("dies1 = %f" % Decimal(dies1))
+                inner.extend([d1, t1, conf1, rec1, dth1, un1, gas1, dies1])
+                if (check1 == True):
+                    value_array.append(inner)
+                # row 2
+                inner = []
+                d2 = form.cleaned_data['d2']
+                t2 = form.cleaned_data['t2']
+                conf2 = form.cleaned_data['conf2']
+                rec2 = form.cleaned_data['rec2']
+                dth2 = form.cleaned_data['dth2']
+                un2 = form.cleaned_data['un2']
+                gas2 = form.cleaned_data['gas2']
+                dies2 = form.cleaned_data['dies2']
+                check2 = form.cleaned_data['check2']
+                inner.extend([d2, t2, conf2, rec2, dth2, un2, gas2, dies2])
+                if (check2 == True):
+                    value_array.append(inner)
+                # row 3
+                inner = []
+                d3 = form.cleaned_data['d3']
+                t3 = form.cleaned_data['t3']
+                conf3 = form.cleaned_data['conf3']
+                rec3 = form.cleaned_data['rec3']
+                dth3 = form.cleaned_data['dth3']
+                un3 = form.cleaned_data['un3']
+                gas3 = form.cleaned_data['gas3']
+                dies3 = form.cleaned_data['dies3']
+                check3 = form.cleaned_data['check3']
+                inner.extend([d3, t3, conf3, rec3, dth3, un3, gas3, dies3])
+                if (check3 == True):
+                    value_array.append(inner)
+                # end rows
+                print("value_array = ", value_array)
+                rows = len(value_array)
+                request.session['rows'] = rows
+                create_image_sp(value_array)
+            else:
+                print("Form was not valid.")
+
+            return redirect('/c19/graph_sp')
+
+def receive_input_dj(request):
+    if (request.method == 'POST'):
+            print("In receive: got post request")
+            form = sp_form(request.POST, request.FILES)
+            context = {}
+            value_array = []
+            if form.is_valid():
+                print("The form was valid.")
+                inner = []
+                d1 = form.cleaned_data['d1']
+                t1 = form.cleaned_data['t1']
+                conf1 = form.cleaned_data['conf1']
+                rec1 = form.cleaned_data['rec1']
+                dth1 = form.cleaned_data['dth1']
+                un1 = form.cleaned_data['un1']
+                gas1 = form.cleaned_data['gas1']
+                dies1 = form.cleaned_data['dies1']
+                check1 = form.cleaned_data['check1']
+                #print("d1 = %f" % Decimal(d1))
+                #print("t1 = %f" % Decimal(t1))
+                #print("conf1 = %d" % Decimal(conf1))
+                #print("rec1 = %d" % Decimal(rec1))
+                #print("dth1 = %d" % Decimal(dth1))
+                #print("un1 = %f" % Decimal(un1))
+                #print("gas1 = %f" % Decimal(gas1))
+                #print("dies1 = %f" % Decimal(dies1))
+                inner.extend([d1, t1, conf1, rec1, dth1, un1, gas1, dies1])
+                if (check1 == True):
+                    value_array.append(inner)
+                # row 2
+                inner = []
+                d2 = form.cleaned_data['d2']
+                t2 = form.cleaned_data['t2']
+                conf2 = form.cleaned_data['conf2']
+                rec2 = form.cleaned_data['rec2']
+                dth2 = form.cleaned_data['dth2']
+                un2 = form.cleaned_data['un2']
+                gas2 = form.cleaned_data['gas2']
+                dies2 = form.cleaned_data['dies2']
+                check2 = form.cleaned_data['check2']
+                inner.extend([d2, t2, conf2, rec2, dth2, un2, gas2, dies2])
+                if (check2 == True):
+                    value_array.append(inner)
+                # row 3
+                inner = []
+                d3 = form.cleaned_data['d3']
+                t3 = form.cleaned_data['t3']
+                conf3 = form.cleaned_data['conf3']
+                rec3 = form.cleaned_data['rec3']
+                dth3 = form.cleaned_data['dth3']
+                un3 = form.cleaned_data['un3']
+                gas3 = form.cleaned_data['gas3']
+                dies3 = form.cleaned_data['dies3']
+                check3 = form.cleaned_data['check3']
+                inner.extend([d3, t3, conf3, rec3, dth3, un3, gas3, dies3])
+                if (check3 == True):
+                    value_array.append(inner)
+                # end rows
+                print("value_array = ", value_array)
+                rows = len(value_array)
+                request.session['rows'] = rows
+                create_image_dj(value_array)
+            else:
+                print("Form was not valid.")
+
+            return redirect('/c19/graph_dj')
+
+def receive_input_un(request): 
+    if (request.method == 'POST'):
+            print("In receive: got post request")
+            form = sp_form(request.POST, request.FILES)
+            context = {}
+            value_array = []
+            if form.is_valid():
+                print("The form was valid.")
+                inner = []
+                g1 = form.cleaned_data['g1']
+                d1 = form.cleaned_data['d1']
+                t1 = form.cleaned_data['t1']
+                conf1 = form.cleaned_data['conf1']
+                rec1 = form.cleaned_data['rec1']
+                dth1 = form.cleaned_data['dth1']
+                gas1 = form.cleaned_data['gas1']
+                dies1 = form.cleaned_data['dies1']
+                check1 = form.cleaned_data['check1']
+                #print("d1 = %f" % Decimal(d1))
+                #print("t1 = %f" % Decimal(t1))
+                #print("conf1 = %d" % Decimal(conf1))
+                #print("rec1 = %d" % Decimal(rec1))
+                #print("dth1 = %d" % Decimal(dth1))
+                #print("un1 = %f" % Decimal(un1))
+                #print("gas1 = %f" % Decimal(gas1))
+                #print("dies1 = %f" % Decimal(dies1))
+                inner.extend([d1, t1, conf1, rec1, dth1, un1, gas1, dies1])
+                if (check1 == True):
+                    value_array.append(inner)
+                # row 2
+                inner = []
+                g1 = form.cleaned_data['g2']
+                d2 = form.cleaned_data['d2']
+                t2 = form.cleaned_data['t2']
+                conf2 = form.cleaned_data['conf2']
+                rec2 = form.cleaned_data['rec2']
+                dth2 = form.cleaned_data['dth2']
+                gas2 = form.cleaned_data['gas2']
+                dies2 = form.cleaned_data['dies2']
+                check2 = form.cleaned_data['check2']
+                inner.extend([d2, t2, conf2, rec2, dth2, un2, gas2, dies2])
+                if (check2 == True):
+                    value_array.append(inner)
+                # row 3
+                inner = []
+                g1 = form.cleaned_data['g3']
+                d3 = form.cleaned_data['d3']
+                t3 = form.cleaned_data['t3']
+                conf3 = form.cleaned_data['conf3']
+                rec3 = form.cleaned_data['rec3']
+                dth3 = form.cleaned_data['dth3']
+                gas3 = form.cleaned_data['gas3']
+                dies3 = form.cleaned_data['dies3']
+                check3 = form.cleaned_data['check3']
+                inner.extend([d3, t3, conf3, rec3, dth3, un3, gas3, dies3])
+                if (check3 == True):
+                    value_array.append(inner)
+                # end rows
+                print("value_array = ", value_array)
+                rows = len(value_array)
+                request.session['rows'] = rows
+                create_image_un(value_array)
+            else:
+                print("Form was not valid.")
+
+            return redirect('/c19/graph_un')
+
+
 def receive_csv_dj(request):
     if (request.method == 'POST'):
             print("In receive: got post request")
@@ -367,14 +571,16 @@ def form(request):
     return HttpResponse(template.render(context, request))
 
 def prediction_sp(request):
-    form = CSVForm()
-    context = {'csvform': form}
+    csvform = CSVForm()
+    inputform = sp_form()
+    context = {'csvform': csvform, 'inputform': inputform}
     template = loader.get_template('prediction_sp.html')
     return HttpResponse(template.render(context, request))
 
 def prediction_dj(request):
-    form = CSVForm()
-    context = {'csvform': form}
+    csvform = CSVForm()
+    inputform = sp_form()
+    context = {'csvform': csvform, 'inputform': inputform}
     template = loader.get_template('prediction_dj.html')
     return HttpResponse(template.render(context, request))
 
@@ -389,8 +595,9 @@ def graph_dj(request):
     return HttpResponse(template.render(context, request))
 
 def prediction_un(request):
-    form = CSVForm()
-    context = {'csvform': form}
+    csvform = CSVForm()
+    inputform = un_form()
+    context = {'csvform': csvform, 'inputform':inputform}
     template = loader.get_template('prediction_un.html')
     return HttpResponse(template.render(context, request))
 

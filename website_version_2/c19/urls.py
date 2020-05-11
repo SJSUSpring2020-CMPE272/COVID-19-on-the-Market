@@ -32,5 +32,12 @@ urlpatterns = [
     path('animations', views.animations),
     path('other', views.other),
 
+    path('receive_input_sp', views.receive_input_sp),
+
+    path('receive_input_dj', views.receive_input_dj),
+
+    path('receive_input_un', views.receive_input_un)
+
+
 
 ]
