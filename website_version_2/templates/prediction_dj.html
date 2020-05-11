@@ -11,7 +11,7 @@
 
  <!-- Page Heading -->
  <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Predict the S &amp; P 500 market here.</h1>
+        <h1 class="h3 mb-0 text-gray-800">Predict the Dow Jones Industrial Average here.</h1>
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
       </div>
 
@@ -76,7 +76,7 @@
                     <!-- Card Body -->
                     <div class="card-body" style="border: 2px solid red; padding: 0px; height: 500px;">
                       <div class="chart-area" style="border: 2px solid yellow; height: 500px">
-                            <form action="/c19/receive_csv" method="post" enctype="multipart/form-data">
+                            <form action="/c19/receive_csv_dj" method="post" enctype="multipart/form-data">
                                 {% csrf_token %}
                             <div class="file-upload">
                                     <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Attach File</button>

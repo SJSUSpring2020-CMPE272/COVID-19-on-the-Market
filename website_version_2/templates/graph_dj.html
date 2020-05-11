@@ -1,0 +1,62 @@
+<!-- PredictionSP.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+{% block content %}
+<div class="container-fluid" style="height: 700px;">
+
+ <!-- Page Heading -->
+ <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Prediction Results</h1>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+      </div>
+
+
+      
+      <!--<label class="switch" style=" vertical-align: text-bottom;">
+            <input type="checkbox" id="switch-input">
+            <span class="slider round"></span>
+          </label>
+      <div class="toggle-us h5 mb-0 font-weight-bold text-gray-800" style=" display: inline-block; vertical-align: text-bottom; margin-left: 10px; height: 38px; ">Upload CSV</div>
+      <div class="toggle-ca h5 mb-0 font-weight-bold text-gray-800" style=" display: inline-block; vertical-align: text-bottom; margin-left: 10px; height: 38px; ">Manual Input</div>-->
+          <div class='h5 mb-0 font-weight-bold text-gray-800' style='height: 44px'></div>
+        <!-- row 1 -->
+        <div class="row" style="border: 2px solid red; height: 600px;">
+                <div  style="width: 1500px !important; border: 2px solid orange; display: inline-block; padding: 10px; margin: 10px; height: 400px;">
+                  <div class="card shadow mb-4" style="width: 1200px; border: 2px solid purple; margin: 0px; height: 500px !important;">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                      <h6 class="m-0 font-weight-bold text-gray-800" style="color: rgb(0, 0, 153) !important;">The next {{ request.session.rows }} days of the Dow Jones Industrial market:</h6>
+                      <div class="dropdown no-arrow">
+                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                          <div class="dropdown-header">Dropdown Header:</div>
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Card Body -->
+                    <div class="card-body" style="border: 2px solid red; padding: 0px; height: 500px;">
+                      <div class="chart-area" style="border: 2px solid yellow; height: 500px; text-align: center;">
+                           
+                            <div id="img_box">
+                                    <img src="{% static 'img/dj_graph.png' %}" alt="image did not work" height="400" width="500">
+                                </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div> <!-- end row 1-->
+
+</div>
+{% endblock content %}
