@@ -8,10 +8,12 @@ COVID-19 is an ongoing pandemic currently affecting the entire world. Not only h
 
 # Technology Stack
 #### Model
-- IBM Watson Machine Studio
+- IBM Watson Studio
 - Pandas
-- Python
+- Plot.ly
+- COVID19Py
+
 #### Website
 - Django
 - HTML/CSS
-- AWS EC2
+- Python Anywhere Cloud Service
