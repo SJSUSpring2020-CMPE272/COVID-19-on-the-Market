@@ -38,6 +38,7 @@
       color: black;
       border-radius: 15px;
       height:100%;
+      padding: 15px;
     }
 
     .form-submit-box {
@@ -170,21 +171,27 @@
   margin: 0;
   color: #fff;
   background: #1FB264;
+  background: rgb(0, 0, 153);
   border: none;
   padding: 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #15824B;
-  transition: all .2s ease;
+  border-radius: 20px;
+  /*border-bottom: 4px solid #15824B;*/
+  /*transition: all .2s ease;*/
   outline: none;
   text-transform: uppercase;
   font-weight: 700;
+  -webkit-transition: background-color 700ms linear;
+    -ms-transition: background-color 700ms linear;
+    transition: background-color 700ms linear;
 }
 
 .file-upload-btn:hover {
   background: #1AA059;
+  background: rgb(0, 0, 153);
   color: #ffffff;
   transition: all .2s ease;
   cursor: pointer;
+  background: gray;
 }
 
 .file-upload-btn:active {
@@ -211,13 +218,20 @@
 .image-upload-wrap {
   margin-top: 20px;
   border: 4px dashed #1FB264;
+  border: 4px dashed rgb(0, 0, 153);
+  border-radius: 20px;
   position: relative;
+    -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
 }
 
 .image-dropping,
 .image-upload-wrap:hover {
   background-color: #1FB264;
-  border: 4px dashed #ffffff;
+  background-color: rgb(0, 0, 153);
+  background-color: gray;
+  /*border: 4px dashed #ffffff;*/
 }
 
 .image-title-wrap {
@@ -233,6 +247,7 @@
   font-weight: 100;
   text-transform: uppercase;
   color: #15824B;
+  color: rgb(0, 0, 153);
   padding: 60px 0;
 }
 
@@ -245,24 +260,32 @@
 
 .remove-image {
   width: 200px;
+  width: 60%;
   margin: 0;
   color: #fff;
   background: #cd4535;
+  background: rgb(172, 171, 171);
   border: none;
   padding: 10px;
   border-radius: 4px;
-  border-bottom: 4px solid #b02818;
+  /*border-bottom: 4px solid #b02818;*/
   transition: all .2s ease;
   outline: none;
   text-transform: uppercase;
   font-weight: 700;
+  -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
 }
 
 .remove-image:hover {
-  background: #c13b2a;
+  background: #bb0000;
   color: #ffffff;
   transition: all .2s ease;
   cursor: pointer;
+  -webkit-transition: background-color 500ms linear;
+    -ms-transition: background-color 500ms linear;
+    transition: background-color 500ms linear;
 }
 
 .remove-image:active {
@@ -292,7 +315,7 @@
       right: 0;
       bottom: 0;
       background-color: #ccc;
-      background-color: #1cc88a;
+      background-color: rgb(0, 0, 153);
       -webkit-transition: .4s;
       transition: .4s;
       }
@@ -310,11 +333,14 @@
       }
 
       input:checked + .slider {
-      background-color: #2196F3;
+      background-color: rgb(117, 123, 128);
+      background-color: rgb(4, 112, 49);
       }
 
       input:focus + .slider {
-      box-shadow: 0 0 1px #2196F3;
+      box-shadow: 0 0 1px rgb(117, 123, 128);
+      box-shadow: 0 0 1px rgb(4, 112, 49);
+
       }
 
       input:checked + .slider:before {
@@ -496,7 +522,7 @@
   <div id="wrapper" style="display: none;">
 
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" style="background: rgb(0, 0, 153) !important; " id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
       <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/c19">
@@ -625,7 +651,7 @@
       <div id="content">
 
         <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="color: rgb(0, 0, 153) !important;">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -809,7 +835,7 @@
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">Welcome, Michaela. Here's today at a glance.</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <a href="#" style="background: rgb(0, 0, 153) !important;" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" ><i class="fas fa-download fa-sm text-white-50" ></i> Generate Report</a>
           </div>
 
 
@@ -826,11 +852,11 @@
               
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
+              <div class="card border-left-primary shadow h-100 py-2" style="border-left: 0.25rem solid rgb(0, 0, 153) !important;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tests Conducted</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1" style="color: rgb(0, 0, 153) !important;">Tests Conducted</div>
                       <div class="toggle-us h5 mb-0 font-weight-bold text-gray-800">{{ us.tests }}</div>
 
                       <div class="toggle-ca h5 mb-0 font-weight-bold text-gray-800">{{ ca.tests }}</div>
@@ -845,11 +871,11 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
+              <div class="card border-left-success shadow h-100 py-2" style="border-left: 0.25rem solid rgb(4, 112, 49) !important;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Confirmed</div>
+                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1" style="color: rgb(4, 112, 49) !important;">Confirmed</div>
                       <div class="toggle-us h5 mb-0 font-weight-bold text-gray-800">{{ us.confirmed }}</div>
 
                       <div class="toggle-ca h5 mb-0 font-weight-bold text-gray-800">{{ ca.confirmed }}</div>
@@ -864,11 +890,11 @@
 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
+              <div class="card border-left-info shadow h-100 py-2" style="border-left: 0.25rem solid #000000 !important;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Deaths</div>
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1" style="color: black !important;">Deaths</div>
                       <div class="row no-gutters align-items-center">
                         <div class="col-auto">
                             <div class="toggle-us h5 mb-0 mr-3 font-weight-bold text-gray-800">{{ us.deaths }}</div>
@@ -891,11 +917,11 @@
 
             <!-- Pending Requests Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-warning shadow h-100 py-2">
+              <div class="card border-left-warning shadow h-100 py-2" style="border-left: 0.25rem solid red !important;">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">In ICU</div>
+                      <div class="text-xs font-weight-bold text-warning text-uppercase mb-1" style="color: red !important;">In ICU</div>
                       <div class="toggle-us h5 mb-0 font-weight-bold text-gray-800">{{ us.icu }}</div>
                       <div class="toggle-ca h5 mb-0 font-weight-bold text-gray-800">{{ ca.icu }}</div>
                     </div>

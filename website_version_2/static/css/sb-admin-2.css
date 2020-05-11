@@ -9832,7 +9832,9 @@ a:focus {
 }
 
 .border-left-info {
-  border-left: 0.25rem solid #36b9cc !important;
+  /*border-left: 0.25rem solid #36b9cc !important;*/
+  border-left: 0.25rem solid #000000 !important;
+
 }
 
 .border-bottom-info {
