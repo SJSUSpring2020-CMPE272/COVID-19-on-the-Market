@@ -2,8 +2,8 @@
 
 
 
-
-
+#zoe's ml_instance_id = "f02f8a37-ab7d-4528-ae60-88d678592f0a"
+#zoe's apikey = "aLmlEFjJvsAhbJEps8hT56N_00AdGCoza4XbsW00Ldsm"
 
 def getPrediction(iam_token, valueArray):
 	import urllib3, requests, json
