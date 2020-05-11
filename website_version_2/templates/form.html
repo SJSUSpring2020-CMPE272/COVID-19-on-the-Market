@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>SB Admin 2 - Dashboard</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>        
+        <title>C19 Test Page</title>
+        <script>
+
+            $(document).ready(function(){
+                $(".fields0").each(function() {
+                    var field = $(this);
+                    $(".slider-range", field).each( function() {
+                        var slider = $(this);
+                        // changing span value
+                        $(".value", field).html(slider.val());
+                        // change text input value
+                        $(".input-value", field).val(slider.val());
+                        $(".input-value", field).on('input', function() {
+                            var input_value = $(this);
+                            $(slider).val(input_value.val())
+                        });
+                        $(slider).on('input', function() {
+                            $(".value", field).html(slider.val());
+                            $(".input-value", field).val(slider.val())
+                        });
+                        
+                    });
+                });
+            });
+
+        </script>
+    </head>
+    <body>
+        <div id="text">
+            <div id="title_box" >
+                <!--<h1 id='title'>&lt/covid-19-on-the-market&gt</h1>-->
+                <h1 id='title'>Covid-19-on-the-Market</h1>
+            </div>
+            <div id='main'>
+                <div id="img_box">
+                    <img src="{% static 'images/test_graph.png' %}" alt="image did not work" height="400" width="500">
+                </div>
+                <div id="form_box">
+                    <h1 id='enter_fields'>Enter fields:</h1>
+                    <form action="/c19/receive" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.non_field_errors }}
+                        <div id="row1" class="row">
+                            <!--<div class="fields0" ><span class="value"id="d1_out"></span><label class="label" for="{{ form.d1.id_for_label }}"></label>{{ form.d1}}</div>-->
+                            <div class="fields0" ><!--<span class="value"id="d1_out"></span>-->{{ form.d1_}}{{form.d1}}</div>
+                            <div class="fields0">{{ form.t1_ }}{{ form.t1 }}</div>
+                            <div class="fields0">{{ form.conf1_ }}{{ form.conf1 }}</div>
+                            <div class="fields0">{{ form.rec1_ }}{{ form.rec1 }}</div>
+                            <div class="fields0">{{ form.dth1_ }}{{ form.dth1 }}</div>
+                            <div class="fields0">{{ form.un1_ }}{{ form.un1 }}</div>
+                            <div class="fields0">{{ form.gas1_ }}{{ form.gas1 }}</div>
+                            <div class="fields0">{{ form.dies1_ }}{{ form.dies1 }}</div> 
+                            {{form.file}}
+                            <!--<div class="fields0"><span class="value"id="sel1_out"></span><label class="label" for="{{ form.sel1.id_for_label }}"></label>{{ form.sel1 }}</div> -->
+                        </div> <!-- end row 1 -->
+                        <!--<div id="row2" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d2.id_for_label }}"></label>{{ form.d2}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t2.id_for_label }}"></label>{{ form.t2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf2.id_for_label }}"></label>{{ form.conf2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec2.id_for_label }}"></label>{{ form.rec2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth2.id_for_label }}"></label>{{ form.dth2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un2.id_for_label }}"></label>{{ form.un2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas2.id_for_label }}"></label>{{ form.gas2 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies2.id_for_label }}"></label>{{ form.dies2 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel2.id_for_label }}"></label>{{ form.sel2 }}</div> 
+                        </div>--> <!-- end row 2 -->
+                        <!--<div id="row3" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d3.id_for_label }}"></label>{{ form.d3}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t3.id_for_label }}"></label>{{ form.t3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf3.id_for_label }}"></label>{{ form.conf3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec3.id_for_label }}"></label>{{ form.rec3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth3.id_for_label }}"></label>{{ form.dth3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un3.id_for_label }}"></label>{{ form.un3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas3.id_for_label }}"></label>{{ form.gas3 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies3.id_for_label }}"></label>{{ form.dies3 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel3.id_for_label }}"></label>{{ form.sel3 }}</div> 
+                        </div>--> <!-- end row 3 -->
+                        <!--<div id="row4" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d4.id_for_label }}"></label>{{ form.d4}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t4.id_for_label }}"></label>{{ form.t4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf4.id_for_label }}"></label>{{ form.conf4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec4.id_for_label }}"></label>{{ form.rec4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth4.id_for_label }}"></label>{{ form.dth4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un4.id_for_label }}"></label>{{ form.un4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas4.id_for_label }}"></label>{{ form.gas4 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies4.id_for_label }}"></label>{{ form.dies4 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel4.id_for_label }}"></label>{{ form.sel4 }}</div> 
+                        </div>--> <!-- end row 4 -->
+                        <!--<div id="row5" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d5.id_for_label }}"></label>{{ form.d5}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t5.id_for_label }}"></label>{{ form.t5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf5.id_for_label }}"></label>{{ form.conf5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec5.id_for_label }}"></label>{{ form.rec5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth5.id_for_label }}"></label>{{ form.dth5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un5.id_for_label }}"></label>{{ form.un5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas5.id_for_label }}"></label>{{ form.gas5 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies5.id_for_label }}"></label>{{ form.dies5 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel5.id_for_label }}"></label>{{ form.sel5 }}</div> 
+                        </div>--> <!-- end row 5 -->
+                        <!--<div id="row6" class="row">
+                            <div class="fields"><label class="label" for="{{ form.d6.id_for_label }}"></label>{{ form.d6}}</div>
+                            <div class="fields"><label class="label" for="{{ form.t6.id_for_label }}"></label>{{ form.t6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.conf6.id_for_label }}"></label>{{ form.conf6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.rec6.id_for_label }}"></label>{{ form.rec6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dth6.id_for_label }}"></label>{{ form.dth6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.un6.id_for_label }}"></label>{{ form.un6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.gas6.id_for_label }}"></label>{{ form.gas6 }}</div>
+                            <div class="fields"><label class="label" for="{{ form.dies6.id_for_label }}"></label>{{ form.dies6 }}</div> 
+                            <div class="fields"><label class="label" for="{{ form.sel6.id_for_label }}"></label>{{ form.sel6 }}</div> 
+                        </div>--> <!-- end row 6 -->
+                        <div id="submit"><input type="submit" value="Submit"></div>
+                    </form>
+                </div> <!-- end id "form_box" -->
+            </div> <!-- end id "main" -->
+        </div> <!-- end id "text"-->
+    </body>
+</html>
