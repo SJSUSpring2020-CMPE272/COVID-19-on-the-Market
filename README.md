@@ -23,6 +23,9 @@ COVID-19 is an ongoing pandemic currently affecting the entire world. Not only h
 infection spread
 ![infected](infected.png)
 
+Annotated combined economic indicators
+![indicators](annotated_economic_indicators%20(2).png)
+
 Annotated weekly unemployment filings  
 ![unemp](annotated_unemp.png)
 
