@@ -49,7 +49,10 @@
                       <div class="chart-area" style="height: 500px; text-align: center;">
                            
                             <div id="img_box">
-                                    <img src="{% static 'img/dj_graph.png' %}" alt="image did not work" height="400" width="500">
+                                    {% with 'img/'|add:request.session.imagename as image_static %}
+                                    <img src="{% static image_static %}" alt="image did not work" height="400" width="500">
+                                    {% endwith %}
+                                    <!--<img src="{% static 'img/dj_graph.png' %}" alt="image did not work" height="400" width="500">-->
                                 </div>
 
                       </div>

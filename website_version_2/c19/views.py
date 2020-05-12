@@ -18,6 +18,7 @@ import requests
 from .forms import CSVForm
 from .forms import sp_form
 from .forms import un_form
+import random 
 
 
 #=========================== S&P 500 =========================================================
@@ -26,10 +27,10 @@ def create_image_sp(data):
     for row in data:
         input_array.append(row)
     payload = construct_payload_sp(input_array)
-    #predictions = getPrediction_sp(payload)
-    #print("predictions = " + str(predictions))
+    predictions = getPrediction_sp(payload) 
+    #print("***predictions sp = " + str(predictions))
     #predictions = {'predictions': [{'fields': ['prediction'], 'values': [[2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877],]}]}
-    '''dataPoints = predictions["predictions"][0]["values"]
+    dataPoints = predictions["predictions"][0]["values"]
     y = np.linspace(1, len(dataPoints), len(dataPoints))
     figure = plt.figure()
     new_plot = figure.add_subplot(111)
@@ -49,7 +50,11 @@ def create_image_sp(data):
     new_plot.set_ylabel('S&P 500')
     new_plot.yaxis.label.set_color('black')
     new_plot.xaxis.label.set_color('black') 
-    plt.savefig('static/img/sp_graph.png')'''
+    count = random.randint(1,2000)
+    filename = 'static/img/graph' + str(count) + '.png'
+    plt.savefig(filename)
+    print('filename = ', filename)
+    return str(count)
 def construct_payload_sp(inputArray):
     payload = {"input_data": 
                 [
@@ -108,11 +113,12 @@ def create_image_un(data):
     input_array = []
     for row in data:
         input_array.append(row)
-    #token = get_Iam_token_un()
-    #predictions = getPrediction_un(token, data)
+    token = get_Iam_token_un()
+    predictions = getPrediction_un(token, data)
+    print("***predictions un = " + str(predictions))
     #print("predictions = " + str(predictions))
     #predictions = {'predictions': [{'fields': ['prediction'], 'values': [[2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877],]}]}
-    '''dataPoints = predictions["predictions"][0]["values"]
+    dataPoints = predictions["predictions"][0]["values"]
     y = np.linspace(1, len(dataPoints), len(dataPoints))
     figure = plt.figure()
     new_plot = figure.add_subplot(111)
@@ -132,7 +138,11 @@ def create_image_un(data):
     new_plot.set_ylabel('Unemployment Claims')
     new_plot.yaxis.label.set_color('black')
     new_plot.xaxis.label.set_color('black') 
-    plt.savefig('static/img/un_graph.png')'''
+    #plt.savefig('static/img/un_graph.png')
+    count = random.randint(1,2000)
+    filename = 'static/img/graph' + str(count) + '.png'
+    plt.savefig(filename)
+    return str(count)
 
 def getPrediction_un(iam_token, valueArray):
 	import urllib3, requests, json
@@ -174,11 +184,12 @@ def create_image_dj(data):
     input_array = []
     for row in data:
         input_array.append(row)
-    #token = get_Iam_token_dj()
-    #predictions = getPrediction_dj(token, data)
+    token = get_Iam_token_dj()
+    predictions = getPrediction_dj(token, data)
+    print("***predictions dj = " + str(predictions))
     #print("predictions = " + str(predictions))
     #predictions = {'predictions': [{'fields': ['prediction'], 'values': [[2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2536.1139892578126], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2521.202978515625], [2551.5869873046877],]}]}
-    '''dataPoints = predictions["predictions"][0]["values"]
+    dataPoints = predictions["predictions"][0]["values"]
     y = np.linspace(1, len(dataPoints), len(dataPoints))
     figure = plt.figure()
     new_plot = figure.add_subplot(111)
@@ -198,7 +209,11 @@ def create_image_dj(data):
     new_plot.set_ylabel('Dow Jones Industrial Average')
     new_plot.yaxis.label.set_color('black')
     new_plot.xaxis.label.set_color('black') 
-    plt.savefig('static/img/dj_graph.png')'''
+    #plt.savefig('static/img/dj_graph.png')
+    count = random.randint(1,2000)
+    filename = 'static/img/graph' + str(count) + '.png'
+    plt.savefig(filename)
+    return str(count)
 
 def getPrediction_dj(iam_token, valueArray):
 	import urllib3, requests, json
@@ -289,7 +304,8 @@ def receive_csv(request):
                 rows = len(data)
                 request.session['rows'] = rows
                 #print("data = ", data)
-                create_image_sp(data)
+                count = create_image_sp(data)
+                request.session['imagename'] = 'graph'+count+'.png'
             else:
                 print("Form was not valid.")
             return redirect('/c19/graph_sp')    
@@ -355,7 +371,8 @@ def receive_input_sp(request):
                 print("value_array = ", value_array)
                 rows = len(value_array)
                 request.session['rows'] = rows
-                create_image_sp(value_array)
+                count = create_image_sp(value_array)
+                request.session['imagename'] = 'graph'+count+'.png'
             else:
                 print("Form was not valid.")
 
@@ -422,7 +439,8 @@ def receive_input_dj(request):
                 print("value_array = ", value_array)
                 rows = len(value_array)
                 request.session['rows'] = rows
-                create_image_dj(value_array)
+                count = create_image_dj(value_array)
+                request.session['imagename'] = 'graph'+count+'.png'
             else:
                 print("Form was not valid.")
 
@@ -431,9 +449,10 @@ def receive_input_dj(request):
 def receive_input_un(request): 
     if (request.method == 'POST'):
             print("In receive: got post request")
-            form = sp_form(request.POST, request.FILES)
+            form = un_form(request.POST, request.FILES)
             context = {}
             value_array = []
+            print("errors = ", form.errors)
             if form.is_valid():
                 print("The form was valid.")
                 inner = []
@@ -454,12 +473,12 @@ def receive_input_un(request):
                 #print("un1 = %f" % Decimal(un1))
                 #print("gas1 = %f" % Decimal(gas1))
                 #print("dies1 = %f" % Decimal(dies1))
-                inner.extend([d1, t1, conf1, rec1, dth1, un1, gas1, dies1])
+                inner.extend([g1, d1, t1, conf1, rec1, dth1, gas1, dies1])
                 if (check1 == True):
                     value_array.append(inner)
                 # row 2
                 inner = []
-                g1 = form.cleaned_data['g2']
+                g2 = form.cleaned_data['g2']
                 d2 = form.cleaned_data['d2']
                 t2 = form.cleaned_data['t2']
                 conf2 = form.cleaned_data['conf2']
@@ -468,12 +487,12 @@ def receive_input_un(request):
                 gas2 = form.cleaned_data['gas2']
                 dies2 = form.cleaned_data['dies2']
                 check2 = form.cleaned_data['check2']
-                inner.extend([d2, t2, conf2, rec2, dth2, un2, gas2, dies2])
+                inner.extend([g2, d2, t2, conf2, rec2, dth2, gas2, dies2])
                 if (check2 == True):
                     value_array.append(inner)
                 # row 3
                 inner = []
-                g1 = form.cleaned_data['g3']
+                g3 = form.cleaned_data['g3']
                 d3 = form.cleaned_data['d3']
                 t3 = form.cleaned_data['t3']
                 conf3 = form.cleaned_data['conf3']
@@ -482,14 +501,16 @@ def receive_input_un(request):
                 gas3 = form.cleaned_data['gas3']
                 dies3 = form.cleaned_data['dies3']
                 check3 = form.cleaned_data['check3']
-                inner.extend([d3, t3, conf3, rec3, dth3, un3, gas3, dies3])
+                inner.extend([g3, d3, t3, conf3, rec3, dth3, gas3, dies3])
                 if (check3 == True):
                     value_array.append(inner)
                 # end rows
                 print("value_array = ", value_array)
                 rows = len(value_array)
                 request.session['rows'] = rows
-                create_image_un(value_array)
+                count = create_image_un(value_array)
+                request.session['imagename'] = 'graph'+count+'.png'
+
             else:
                 print("Form was not valid.")
 
@@ -508,7 +529,8 @@ def receive_csv_dj(request):
                 rows = len(data)
                 request.session['rows'] = rows
                 #print("data = ", data)
-                create_image_dj(data)
+                count = create_image_dj(data)
+                request.session['imagename'] = 'graph'+count+'.png'
             else:
                 print("Form was not valid.")
             return redirect('/c19/graph_dj')    
@@ -525,7 +547,8 @@ def receive_csv_un(request):
                 rows = len(data)
                 request.session['rows'] = rows
                 #print("data = ", data)
-                create_image_un(data)
+                count = create_image_un(data)
+                request.session['imagename'] = 'graph'+count+'.png'
             else:
                 print("Form was not valid.")
             return redirect('/c19/graph_un')    
