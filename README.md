@@ -17,3 +17,18 @@ COVID-19 is an ongoing pandemic currently affecting the entire world. Not only h
 - Django
 - HTML/CSS
 - Python Anywhere Cloud Service
+
+# Visualizations
+
+infection spread
+![infected](infected.png)
+
+Annotated weekly unemployment filings  
+![unemp](annotated_unemp.png)
+
+S&P500 values and volume
+![S&P500](S&P500.png)
+
+Rates
+![rates](rates.png)
+
