@@ -24,6 +24,11 @@ infection spread
 ![infected](infected.png)
 
 Annotated combined economic indicators
+
+ADS: Aruoba-Diebold-Scotti Business Conditions Index. Compound index from multiple low and high frequency data. Average is zero. Positive values mean good. Negative values mean bad.
+
+WEI: Weekly Economic Index. A compound indicator of real economic activity. Sale of products and services, not bonds and stocks.
+
 ![indicators](annotated_economic_indicators%20(2).png)
 
 Annotated weekly unemployment filings  
