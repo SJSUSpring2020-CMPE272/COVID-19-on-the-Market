@@ -33,5 +33,9 @@ S&P500 values and volume
 ![S&P500](S&P500.png)
 
 Rates
+
+Ten-Year Treasury Constant Maturity: Is used as reference pricing for securities (like corporate bonds)
+
+Ten-Year Breakeven Inflation Rate: Expected inflation of the market over the next 10 years
 ![rates](rates.png)
 
