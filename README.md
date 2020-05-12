@@ -17,3 +17,6 @@ COVID-19 is an ongoing pandemic currently affecting the entire world. Not only h
 - Django
 - HTML/CSS
 - Python Anywhere Cloud Service
+
+# Visualizations
+![infected](infected.png)
