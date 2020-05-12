@@ -52,3 +52,6 @@ This is what the website dashboard of the home page looks like with a summary of
 
 This is an example of how the user can upload a csv file to generate new predictions.
 ![Website User Predictions](WebsiteUserPredictions.png)
+
+This is an example of how the user can enter in values manually by typing in the text boxes or using the sliders to generate new predictions.
+![Website Manual Input](WebsiteManualInput.png)
