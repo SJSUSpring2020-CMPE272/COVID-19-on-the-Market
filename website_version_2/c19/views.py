@@ -53,9 +53,14 @@ def create_image_sp(data):
     new_plot.yaxis.label.set_color('black')
     new_plot.xaxis.label.set_color('black') 
     count = random.randint(1,2000)
-    filename = 'static/img/graph' + str(count) + '.png'
-    plt.savefig(filename)
-    print('filename = ', filename)
+    #filename = 'static/img/graph' + str(count) + '.png'
+    #plt.savefig(filename)
+    #print('filename = ', filename)
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    filename = '../static/img/graph' + str(count) + '.png'
+    my_file = os.path.join(THIS_FOLDER, filename)
+    plt.savefig(my_file)
+    print('filename = ', my_file)
     return str(count)
 def construct_payload_sp(inputArray):
     payload = {"input_data": 
@@ -142,8 +147,13 @@ def create_image_un(data):
     new_plot.xaxis.label.set_color('black') 
     #plt.savefig('static/img/un_graph.png')
     count = random.randint(1,2000)
-    filename = 'static/img/graph' + str(count) + '.png'
-    plt.savefig(filename)
+    #filename = 'static/img/graph' + str(count) + '.png'
+    #plt.savefig(filename)
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    filename = '../static/img/graph' + str(count) + '.png'
+    my_file = os.path.join(THIS_FOLDER, filename)
+    plt.savefig(my_file)
+    print('filename = ', my_file)
     return str(count)
 
 def getPrediction_un(iam_token, valueArray):
@@ -213,8 +223,13 @@ def create_image_dj(data):
     new_plot.xaxis.label.set_color('black') 
     #plt.savefig('static/img/dj_graph.png')
     count = random.randint(1,2000)
-    filename = 'static/img/graph' + str(count) + '.png'
-    plt.savefig(filename)
+    #filename = 'static/img/graph' + str(count) + '.png'
+    #plt.savefig(filename)
+    THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
+    filename = '../static/img/graph' + str(count) + '.png'
+    my_file = os.path.join(THIS_FOLDER, filename)
+    plt.savefig(my_file)
+    print('filename = ', my_file)
     return str(count)
 
 def getPrediction_dj(iam_token, valueArray):
