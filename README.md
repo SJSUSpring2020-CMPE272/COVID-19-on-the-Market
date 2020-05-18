@@ -53,7 +53,8 @@ We have used PythonAnywhere to host and deploy our application.
 Please view the website video demonstration at this link:  
 https://drive.google.com/open?id=1O3n2TD4wpdGcScPq5qIE6aflaZJpTX58  
 The website can be found at this link:  
-http://rhong5.pythonanywhere.com/c19/ 
+http://rhong5.pythonanywhere.com/c19/  
+Please note: Predictions do not work on hosted website. Please view video demo to see predictions working on localhost. 
 
 This is what the website dashboard of the home page looks like with a summary of statistics including the number of tests conducted, the number of confirmed cases, the number of deaths, and the number of people in the ICU, as well as graphical visualizations.
 ![Website Dashboard](WebsiteDashboard.png)
